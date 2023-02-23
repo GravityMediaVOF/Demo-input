@@ -190,8 +190,8 @@
                 <div class="vinkopties-optie active" data-name="accountants">
                   <div class="vinkopties-vink"></div>
                   <div class="vinkopties-text">
-                    <h4 class="vinkopties-subtitel">Accountants</h4>
-                    <p class="vinkopties-p">Kleurrijk en speels design dat nieuwheid uitstraalt</p>
+                    <h4 class="vinkopties-subtitel">Fris</h4>
+                    <p class="vinkopties-p">Licht & luchtig, moderne uitstraling.</p>
                   </div>
                   <div class="vinkopties-img">
                     <img src="./src/img/Demo portfolio_Laptop & Mobile_Accountants.webp" alt="">
@@ -202,8 +202,8 @@
                 <div class="vinkopties-optie" data-name="advocaten">
                   <div class="vinkopties-vink"></div>
                   <div class="vinkopties-text">
-                    <h4 class="vinkopties-subtitel">Advocaten</h4>
-                    <p class="vinkopties-p">Een design dat aansluit op de huidige trends</p>
+                    <h4 class="vinkopties-subtitel">Statig</h4>
+                    <p class="vinkopties-p">Formeel & traditioneel, klassieke uitstraling.</p>
                   </div>
                   <div class="vinkopties-img">
                     <img src="./src/img/Demo portfolio_Laptop & Mobile_Advocaten.webp" alt="">
@@ -214,8 +214,8 @@
                 <div class="vinkopties-optie" data-name="it-dienstverleners">
                   <div class="vinkopties-vink"></div>
                   <div class="vinkopties-text">
-                    <h4 class="vinkopties-subtitel">IT-dienstverleners</h4>
-                    <p class="vinkopties-p">Een formeel en elegant design</p>
+                    <h4 class="vinkopties-subtitel">Innovatief</h4>
+                    <p class="vinkopties-p">Vernieuwend & vooruitstrevend, moderne uitstraling.</p>
                   </div>
                   <div class="vinkopties-img">
                     <img src="./src/img/Demo portfolio_Laptop & Mobile_IT.webp" alt="">
@@ -226,8 +226,8 @@
                 <div class="vinkopties-optie" data-name="management-consultants">
                   <div class="vinkopties-vink"></div>
                   <div class="vinkopties-text">
-                    <h4 class="vinkopties-subtitel">Management consultants</h4>
-                    <p class="vinkopties-p">Een design met beproefde elementen en klassieke uitstraling</p>
+                    <h4 class="vinkopties-subtitel">Modern</h4>
+                    <p class="vinkopties-p">Simpel & strak, minimalistische uitstraling.</p>
                   </div>
                   <div class="vinkopties-img">
                     <img src="./src/img/Demo portfolio_Laptop & Mobile_Management.webp" alt="">
@@ -238,8 +238,8 @@
                 <div class="vinkopties-optie" data-name="recruitment-agencies">
                   <div class="vinkopties-vink"></div>
                   <div class="vinkopties-text">
-                    <h4 class="vinkopties-subtitel">Recruitment agencies</h4>
-                    <p class="vinkopties-p">Een origineel en buiten-de-lijntjes denkend design</p>
+                    <h4 class="vinkopties-subtitel">Strak</h4>
+                    <p class="vinkopties-p">Minimalistisch en gestroomlijnd ontwerp</p>
                   </div>
                   <div class="vinkopties-img">
                     <img src="./src/img/Demo portfolio_Laptop & Mobile_reqruitment.webp" alt="">
@@ -250,8 +250,8 @@
                 <div class="vinkopties-optie" data-name="creatief">
                   <div class="vinkopties-vink"></div>
                   <div class="vinkopties-text">
-                    <h4 class="vinkopties-subtitel">Creatieve optie</h4>
-                    <p class="vinkopties-p">Een origineel en buiten-de-lijntjes denkend design</p>
+                    <h4 class="vinkopties-subtitel">Creatief</h4>
+                    <p class="vinkopties-p">Expressief & inventief, artistieke uitstraling.</p>
                   </div>
                   <div class="vinkopties-img">
                     <img src="./src/img/Demo portfolio_Laptop & Mobile_Creatief.webp" alt="">
@@ -608,13 +608,12 @@
 
 
             <div class="stijl" data-style="accountants">
-              <h1 class="modal-titel">Accountants</h1>
-              <p>De stijl voor accountants is modern en rustig met blauwe tinten en heeft de volgende voordelen:</p>
+              <h1 class="modal-titel">Fris</h1>
+              <p>Deze stijl is modern en rustig met blauwe tinten, en biedt de volgende voordelen:</p>
               <div class="modal-bullet-list">
-                <div class="bullet-point"><div class="bullet"></div><p>Professionele uitstraling die aansluit bij de doelgroep</p></div>
-                <div class="bullet-point"><div class="bullet"></div><p>Duidelijke navigatie gericht op het krijgen van meer leads</p></div>
-                <div class="bullet-point"><div class="bullet"></div><p>Inclusief knoppen om gebruikers te stimuleren om actie te ondernemen</p></div>
-                <div class="bullet-point"><div class="bullet"></div><p>Gebruiksvriendelijke lay-out gericht op de belangrijkste informatie</p></div>
+                <div class="bullet-point"><div class="bullet"></div><p>Gebruik van lichte kleuren</p></div>
+                <div class="bullet-point"><div class="bullet"></div><p>Frisse, schone uitstraling</p></div>
+                <div class="bullet-point"><div class="bullet"></div><p>Benadrukt eenvoud & ruimte</p></div>
               </div>
               <div class="button choose-style">Deze stijl kiezen</div>
             </div>
@@ -622,10 +621,9 @@
 
 
             <div class="stijl" data-style="advocaten">
-              <h1 class="modal-titel">Advocaten</h1>
-              <p>De stijl voor advocaten heeft een statige en schreeuwerige uitstraling met voornamelijk goude tinten, en biedt de volgende voordelen:</p>
+              <h1 class="modal-titel">Statig</h1>
+              <p>Deze stijl heeft een statige en schreeuwerige uitstraling met voornamelijk goude tinten, en biedt de volgende voordelen:</p>
               <div class="modal-bullet-list">
-                <div class="bullet-point"><div class="bullet"></div><p>Imposante uitstraling die aansluit bij de doelgroep</p></div>
                 <div class="bullet-point"><div class="bullet"></div><p>Opvallend design dat de aandacht van bezoekers trekt</p></div>
                 <div class="bullet-point"><div class="bullet"></div><p>Overzichtelijke navigatie die gericht is op conversies</p></div>
                 <div class="bullet-point"><div class="bullet"></div><p>Mogelijkheid voor het plaatsen van aanbevelingen van klanten</p></div>
@@ -636,13 +634,12 @@
 
 
             <div class="stijl" data-style="it-dienstverleners">
-              <h1 class="modal-titel">IT-dienstverleners</h1>
-              <p>De stijl voor IT-dienstverleners heeft een moderne en speelse uitstraling met voornamelijk blauwe en paarse tinten, en biedt de volgende voordelen:</p>
+              <h1 class="modal-titel">Innovatief</h1>
+              <p>Deze stijl heeft een moderne en speelse uitstraling met voornamelijk blauwe en paarse tinten, en biedt de volgende voordelen:</p>
               <div class="modal-bullet-list">
-                <div class="bullet-point"><div class="bullet"></div><p>Modern design dat de doelgroep aanspreekt</p></div>
-                <div class="bullet-point"><div class="bullet"></div><p>Overzichtelijke navigatie gericht op het genereren van leads</p></div>
-                <div class="bullet-point"><div class="bullet"></div><p>Technische elementen die de expertise van het bedrijf benadrukken</p></div>
-                <div class="bullet-point"><div class="bullet"></div><p>Opvallende knoppen om conversies te stimuleren</p></div>
+                <div class="bullet-point"><div class="bullet"></div><p>Futuristische ontwerpelementen, felle kleuren & typografie</p></div>
+                <div class="bullet-point"><div class="bullet"></div><p>Focus op innovatie & technologie</p></div>
+                <div class="bullet-point"><div class="bullet"></div><p>Vooruitgang & vooruitstrevendheid.</p></div>
               </div>
               <div class="button choose-style">Deze stijl kiezen</div>
             </div>
@@ -650,39 +647,36 @@
 
 
             <div class="stijl" data-style="management-consultants">
-              <h1 class="modal-titel">Management consultants</h1>
-              <p>De stijl voor management consultants heeft een moderne en speelse uitstraling met voornamelijk rode tinten, en biedt de volgende voordelen:</p>
+              <h1 class="modal-titel">Modern</h1>
+              <p>Deze stijl heeft een moderne en speelse uitstraling met voornamelijk rode tinten, en biedt de volgende voordelen:</p>
               <div class="modal-bullet-list">
-                <div class="bullet-point"><div class="bullet"></div><p>Moderne uitstraling die de doelgroep aanspreekt</p></div>
-                <div class="bullet-point"><div class="bullet"></div><p>Opvallend design dat de aandacht van bezoekers trekt</p></div>
-                <div class="bullet-point"><div class="bullet"></div><p>Overzichtelijke navigatie die gericht is op het genereren van leads</p></div>
-                <div class="bullet-point"><div class="bullet"></div><p>Mogelijkheid voor het delen van publicaties</p></div>
+                <div class="bullet-point"><div class="bullet"></div><p>Neutrale kleuren & vormen</p></div>
+                <div class="bullet-point"><div class="bullet"></div><p>Nadruk op functionaliteit</p></div>
+                <div class="bullet-point"><div class="bullet"></div><p>Schone, strakke lijnen</p></div>
               </div>
               <div class="button choose-style">Deze stijl kiezen</div>
             </div>
 
 
             <div class="stijl" data-style="recruitment-agencies">
-              <h1 class="modal-titel">Recruitment agencies</h1>
-              <p>Het template voor management consultants met een moderne en rustige uitstraling met voornamelijk blauwe tinten, biedt de volgende voordelen:</p>
+              <h1 class="modal-titel">Strak</h1>
+              <p>Deze stijl heeft een moderne en rustige uitstraling met voornamelijk blauwe tinten, en biedt de volgende voordelen:</p>
               <div class="modal-bullet-list">
-                <div class="bullet-point"><div class="bullet"></div><p>Professionele en betrouwbare uitstraling die aansluit bij de doelgroep</p></div>
-                <div class="bullet-point"><div class="bullet"></div><p>Duidelijke en overzichtelijke navigatie gericht op het genereren van leads</p></div>
-                <div class="bullet-point"><div class="bullet"></div><p>Mogelijkheid voor het delen van publicaties</p></div>
-                <div class="bullet-point"><div class="bullet"></div><p>Gebruiksvriendelijke lay-out gericht op de belangrijkste informatie</p></div>
+                <div class="bullet-point"><div class="bullet"></div><p>Gebruik van scherpe lijnen en geometrische vormen</p></div>
+                <div class="bullet-point"><div class="bullet"></div><p>Focus op functionaliteit en efficiëntie</p></div>
+                <div class="bullet-point"><div class="bullet"></div><p>Strakke en georganiseerde uitstraling</p></div>
               </div>
               <div class="button choose-style">Deze stijl kiezen</div>
             </div>
 
 
             <div class="stijl" data-style="creatief">
-              <h1 class="modal-titel">Creatieve optie</h1>
-              <p>De creatieve optie met alternatieve en ronde vormen en hoofdzakelijk illustraties, biedt de volgende voordelen:</p>
+              <h1 class="modal-titel">Creatief</h1>
+              <p>Deze stijl maakt gebruik van alternatieve vormen, hoofdzakelijk illustraties, en biedt de volgende voordelen:</p>
               <div class="modal-bullet-list">
-                <div class="bullet-point"><div class="bullet"></div><p>Unieke en creatieve uitstraling die aansluit bij de doelgroep</p></div>
-                <div class="bullet-point"><div class="bullet"></div><p>Opvallend design dat de aandacht van bezoekers trekt</p></div>
-                <div class="bullet-point"><div class="bullet"></div><p>Gebruik van illustraties  die de kernboodschappen versterken</p></div>
-                <div class="bullet-point"><div class="bullet"></div><p>Mogelijkheid voor het plaatsen van portfolio's</p></div>
+                <div class="bullet-point"><div class="bullet"></div><p>Speelse kleuren, ongebruikelijke typografie & illustraties</p></div>
+                <div class="bullet-point"><div class="bullet"></div><p>Artistieke, fantasierijke uitstraling</p></div>
+                <div class="bullet-point"><div class="bullet"></div><p>Authenticiteit & creativiteit</p></div>
               </div>
               <div class="button choose-style">Deze stijl kiezen</div>
             </div>
