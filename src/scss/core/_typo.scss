@@ -1,0 +1,24 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $poppins;
+    font-weight: 600;
+    color: #14223b;
+    margin: 0;
+}
+
+p {
+    line-height: 1.7em;
+    font-family: $inter;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: #14223b;
+}
+
+input {
+    font-family: $inter;
+    color: #14223b;
+}
