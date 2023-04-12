@@ -27,11 +27,10 @@
       </a>
       <div class="menu_options">
         <ul>
-          <!-- deze ook mooi togglen -->
-          <li class="active"><i class="icon">web_asset</i></li>
-          <li class=" mobile_active"><i class="icon">phone_iphone</i></li>
+          <li class="desktop_active active"><i class="icon">web_asset</i></li>
+          <li class="mobile_active"><i class="icon">phone_iphone</i></li>
         </ul>
-        <a class="button orange" href="#">Bekijk de opties</a>
+        <a class="button orange" href="https://www.companyfuel.nl/professionele-website/#features">Bekijk de opties</a>
       </div>
     </div>
 
@@ -478,10 +477,7 @@
             </div>
           </div>
 
-          <!-- HIER IS DE DEMO CAS -->
-
           <div class="step step7" data-step="7">
-            <!-- deze class mobile toggelen -->
             <div class="demo-container demo-container-mobile">
               <iframe id="demoFrame" frameborder="0" marginwidth="0" marginheight="0" scrolling="YES" width="100%" height="100%"></iframe>
             </div>
