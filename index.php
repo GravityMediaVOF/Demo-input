@@ -20,7 +20,22 @@
 </head>
 
 <body>
+  <div class="top_bar_menu">
+    <div class="top_container">
+      <a href="https://www.companyfuel.nl/" target="_blank">
+        <img class="logo" src="./src/img/cf-logo-dark.svg" alt="">
+      </a>
+      <div class="menu_options">
+        <ul>
+          <!-- deze ook mooi togglen -->
+          <li class="active"><i class="icon">web_asset</i></li>
+          <li class=" mobile_active"><i class="icon">phone_iphone</i></li>
+        </ul>
+        <a class="button orange" href="#">Bekijk de opties</a>
+      </div>
+    </div>
 
+  </div>
   <div class="inputform-container">
 
 
@@ -29,11 +44,7 @@
     <div class="inputform-col left">
       <div class="inputform-inner-col left">
 
-        <div class="logo-container">
-          <a href="https://www.companyfuel.nl/" target="_blank">
-            <img src="./src/img/cf-logo-dark.svg" alt="">
-          </a>
-        </div>
+
 
         <div class="step-container-left">
 
@@ -470,7 +481,8 @@
           <!-- HIER IS DE DEMO CAS -->
 
           <div class="step step7" data-step="7">
-            <div class="demo-container">
+            <!-- deze class mobile toggelen -->
+            <div class="demo-container demo-container-mobile">
               <iframe id="demoFrame" frameborder="0" marginwidth="0" marginheight="0" scrolling="YES" width="100%" height="100%"></iframe>
             </div>
           </div>

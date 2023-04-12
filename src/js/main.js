@@ -13,6 +13,7 @@ function Step() {
   }
 
   if (current_step == 7) {
+    document.body.classList.add("container_full");
     document.querySelector(".step-buttons-container.bottom").style.display = "none";
     document.querySelector(".step-buttons-container.mobile").style.display = "none";
   }

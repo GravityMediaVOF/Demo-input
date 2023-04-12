@@ -1,3 +1,7 @@
+html {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     height: 100vh;
@@ -158,10 +162,10 @@ body {
     cursor: pointer;
     position: relative;
     overflow: auto;
-    -ms-flex-negative: 0;
+    display: flex;
+
     flex-shrink: 0;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
+    align-items: center;
     justify-content: center;
     font-family: $poppins;
     font-weight: 500;
@@ -171,10 +175,36 @@ body {
     color: $white;
     background: $blue;
     border-radius: 5px;
-    padding: 18px 22px;
+    height: 50px;
+    padding: 0 22px;
     -webkit-transition: all ease-out .2s;
     transition: all ease-out .2s;
     position: relative;
+
+    &.orange {
+        background-color: $orange;
+
+        &:hover,
+        &:focus {
+            background: darken($orange, 15%);
+        }
+    }
+
+    &.outline {
+        background-color: $white;
+        box-shadow: inset 0 0 0 1.5px $black;
+        color: $black;
+        font-weight: 500;
+
+        i {
+            color: $black;
+        }
+
+        &:hover,
+        &:focus {
+            background: $background;
+        }
+    }
 }
 
 .mobile {
@@ -201,9 +231,9 @@ body {
 
 .inputform-container {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 100px);
     display: grid;
-    grid-template-columns: 4fr 5fr;
+    grid-template-columns: 3fr 5fr;
 }
 
 
@@ -215,7 +245,8 @@ body {
 
 .inputform-col.left {
     background-color: $white;
-    justify-content: flex-end;
+    border-right: 1px solid $border;
+    justify-content: flex-start;
 }
 
 .inputform-col.right {
@@ -233,7 +264,7 @@ body {
     max-width: 550px;
     position: relative;
     display: flex;
-    margin: 0px 30px;
+    margin: 0px;
 }
 
 .inputform-inner-col.right {
@@ -243,16 +274,9 @@ body {
 
 
 
-.logo-container {
-    position: absolute;
-    left: 0;
-    top: 0;
-}
 
-.logo-container img {
-    width: 190px;
-    height: auto;
-}
+
+
 
 
 
@@ -263,6 +287,7 @@ body {
 }
 
 .footer-text {
+    font-size: 16px;
     color: $gray;
 }
 
@@ -288,13 +313,13 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-top: 100px;
+    padding-top: 70px;
     padding-bottom: 200px;
 }
 
 .step-container-right {
     padding-bottom: 100px;
-    padding-top: 120px;
+    padding-top: 70px;
     position: relative;
 }
 
@@ -302,7 +327,6 @@ body {
 
 .instruction-container {
     display: flex;
-    margin-top: 80px;
     flex-direction: column;
 }
 
@@ -319,7 +343,8 @@ body {
 }
 
 h1.instruction-titel {
-    font-size: 4rem;
+    font-size: 3.2rem;
+    line-height: 1.6em;
     margin-bottom: 30px;
 }
 
@@ -380,7 +405,7 @@ h1.instruction-titel {
     color: $red;
     font-family: $inter;
     position: absolute;
-    top: 80px;
+    top: 30px;
     display: none;
 }
 

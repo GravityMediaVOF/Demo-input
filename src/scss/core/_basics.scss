@@ -1,3 +1,140 @@
-body {
-    background: $orange;
+.top_bar_menu {
+    background: white;
+    height: 100px;
+    width: 100%;
+    border-bottom: 1px solid $border;
+    display: inline-flex;
+    justify-content: center;
+
+
+
+
+    .top_container {
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100px;
+        width: calc(100% - 100px);
+
+        @media screen and (max-width: $md) {
+            width: calc(100% - 40px);
+        }
+
+        .logo {
+            width: auto;
+            height: 26px;
+
+            @media screen and (max-width: $md) {
+                height: 22px;
+            }
+        }
+
+        .menu_options {
+            display: none;
+
+            align-items: center;
+            justify-content: flex-end;
+            flex-grow: 1;
+            gap: 10px;
+
+            ul {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+
+                li {
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 50px;
+                    background: $white;
+                    border: 2px solid $border;
+                    width: 50px;
+                    box-sizing: border-box;
+                    cursor: pointer;
+
+                    &.active {
+                        background: $black;
+                        border: 2px solid $black;
+                        cursor: default;
+
+                        i {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.container_full {
+    .top_bar_menu {
+        .top_container {
+            .menu_options {
+                display: inline-flex;
+
+                @media screen and (max-width: $md) {
+
+                    display: none;
+
+                }
+            }
+        }
+    }
+
+    .inputform-container {
+        grid-template-columns: 100%;
+
+        .inputform-col {
+            padding: 0;
+
+            &.left {
+                display: none;
+                padding-left: 0;
+            }
+
+            &.right {
+                display: flex;
+                justify-content: column;
+                max-width: 100%;
+                overflow-y: hidden;
+                height: 100%;
+
+                .step-container-right {
+                    padding: 0;
+                    height: 100%;
+
+                    .demo-container {
+                        height: calc(100vh - 100px);
+                        display: flex;
+                        justify-content: center;
+                        background: $dark-blue;
+
+                        iframe {
+                            transition-property: width;
+                            -webkit-transition-duration: .3s;
+                            transition-duration: .3s;
+                            -webkit-transition-timing-function: ease-in-out;
+                            transition-timing-function: ease-in-out;
+                        }
+
+                        &.demo-container-mobile {
+                            iframe {
+                                width: 425px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .inputform-inner-col {
+                padding: 0;
+                max-width: 100%;
+            }
+        }
+    }
+
 }
