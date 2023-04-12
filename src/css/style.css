@@ -1,11 +1,68 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-feature-settings: 'liga';
+          font-feature-settings: 'liga';
+  overflow-x: hidden;
 }
 
 .style-modal {
@@ -33,6 +90,7 @@ body {
   max-width: 90%;
   max-height: 80%;
   width: 1380px;
+  z-index: 999;
 }
 
 .modal-content-container {
@@ -184,15 +242,12 @@ body {
 .button {
   cursor: pointer;
   position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   overflow: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -204,11 +259,14 @@ body {
   color: #ffffff;
   background: #2d1eed;
   border-radius: 5px;
-  height: 50px;
-  padding: 0 22px;
+  padding: 18px 22px;
   -webkit-transition: all ease-out .2s;
   transition: all ease-out .2s;
   position: relative;
+}
+
+.button:hover, .button:focus {
+  background: #1a0eb0;
 }
 
 .button.orange {
@@ -932,7 +990,10 @@ h1.instruction-titel {
   .mobile.footer-container {
     display: block;
     position: relative;
-    padding: 0px 75px;
+    padding: 20px 75px;
+  }
+  .footer-text {
+    text-align: center;
   }
   .step-buttons-error-message {
     top: -10px;
@@ -962,7 +1023,19 @@ h1.instruction-titel {
     padding-bottom: 0px;
   }
   .step-buttons-container.mobile {
-    padding: 60px 75px;
+    border: 1px solid #e4e3e3;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
+    background: #ffffff;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    z-index: 900;
+    padding: 30px 75px;
+  }
+  .step-buttons-container.mobile div {
+    z-index: 999;
   }
   .video-container {
     margin-right: 0;
@@ -974,19 +1047,32 @@ h1.instruction-titel {
     font-size: 3rem;
   }
   .mobile.footer-container {
-    padding: 0px 35px;
+    padding: 10px 35px;
+  }
+  .footer-text {
+    text-align: center;
   }
   .step-buttons-container.mobile {
-    padding: 60px 35px;
+    padding: 30px 35px;
+    border: 1px solid #e4e3e3;
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 55px;
+    bottom: 0;
+    background: #ffffff;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    z-index: 100;
   }
   .inputform-col.left {
-    padding: 35px;
+    padding: 20px;
   }
   .inputform-inner-col.left {
     margin: 0;
   }
   .inputform-col.right {
-    padding: 35px;
+    padding: 20px;
   }
   .drop-zone__prompt p {
     display: none;
@@ -1025,56 +1111,6 @@ h1.instruction-titel {
   }
 }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-blockquote, q {
-  quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
 h1,
 h2,
 h3,
@@ -1107,7 +1143,7 @@ input {
 
 .top_bar_menu {
   background: white;
-  height: 100px;
+  height: 99px;
   width: 100%;
   border-bottom: 1px solid #e4e3e3;
   display: -webkit-inline-box;
@@ -1138,6 +1174,10 @@ input {
   }
 }
 
+.top_bar_menu .top_container .footer-container {
+  display: none !important;
+}
+
 .top_bar_menu .top_container .logo {
   width: auto;
   height: 26px;
@@ -1145,7 +1185,7 @@ input {
 
 @media screen and (max-width: 768px) {
   .top_bar_menu .top_container .logo {
-    height: 22px;
+    height: 18px;
   }
 }
 
@@ -1184,10 +1224,10 @@ input {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 50px;
+  height: 52px;
   background: #ffffff;
   border: 2px solid #e4e3e3;
-  width: 50px;
+  width: 52px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   cursor: pointer;
@@ -1203,6 +1243,10 @@ input {
   color: #ffffff;
 }
 
+.container_full .footer-container {
+  display: none !important;
+}
+
 .container_full .top_bar_menu .top_container .menu_options {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -1210,7 +1254,7 @@ input {
 }
 
 @media screen and (max-width: 768px) {
-  .container_full .top_bar_menu .top_container .menu_options {
+  .container_full .top_bar_menu .top_container .menu_options ul {
     display: none;
   }
 }
@@ -1268,6 +1312,12 @@ input {
 
 .container_full .inputform-container .inputform-col.right .step-container-right .demo-container.demo-container-mobile iframe {
   width: 425px;
+}
+
+@media screen and (max-width: 768px) {
+  .container_full .inputform-container .inputform-col.right .step-container-right .demo-container.demo-container-mobile iframe {
+    width: 100%;
+  }
 }
 
 .container_full .inputform-container .inputform-col .inputform-inner-col {

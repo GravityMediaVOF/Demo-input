@@ -1,6 +1,6 @@
 .top_bar_menu {
     background: white;
-    height: 100px;
+    height: 99px;
     width: 100%;
     border-bottom: 1px solid $border;
     display: inline-flex;
@@ -21,12 +21,16 @@
             width: calc(100% - 40px);
         }
 
+        .footer-container {
+            display: none !important;
+        }
+
         .logo {
             width: auto;
             height: 26px;
 
             @media screen and (max-width: $md) {
-                height: 22px;
+                height: 18px;
             }
         }
 
@@ -48,10 +52,10 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    height: 50px;
+                    height: 52px;
                     background: $white;
                     border: 2px solid $border;
-                    width: 50px;
+                    width: 52px;
                     box-sizing: border-box;
                     cursor: pointer;
 
@@ -71,15 +75,19 @@
 }
 
 .container_full {
+    .footer-container {
+        display: none !important;
+    }
+
     .top_bar_menu {
         .top_container {
             .menu_options {
                 display: inline-flex;
 
                 @media screen and (max-width: $md) {
-
-                    display: none;
-
+                    ul {
+                        display: none;
+                    }
                 }
             }
         }
@@ -124,6 +132,10 @@
                         &.demo-container-mobile {
                             iframe {
                                 width: 425px;
+
+                                @media screen and (max-width: $md) {
+                                    width: 100%;
+                                }
                             }
                         }
                     }

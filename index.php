@@ -123,7 +123,7 @@
         </div>
 
         <div class="footer-container desktop">
-          <p class="footer-text">Powered by <a class="cf" href="https://www.companyfuel.nl/" target="_blank">company fuel</a> | <a href="#" target="_blank">Voorwaarden</a> <a href="#" target="_blank">Privacy</a></p>
+          <p class="footer-text">Powered by <a class="cf" href="https://www.companyfuel.nl/" target="_blank">company fuel</a><a href="https://www.companyfuel.nl/algemene-voorwaarden/https://www.companyfuel.nl/privacybeleid/" target="_blank">Voorwaarden</a> <a href="" target="_blank">Privacy</a></p>
         </div>
 
       </div>
@@ -504,7 +504,7 @@
     </div>
 
     <div class="footer-container mobile">
-      <p class="footer-text">Powered by <a class="cf" href="https://www.companyfuel.nl/" target="_blank">company fuel</a> | <a href="#" target="_blank">Voorwaarden</a> <a href="#" target="_blank">Privacy</a></p>
+      <p class="footer-text"><a class="cf" href="https://www.companyfuel.nl/" target="_blank">company fuel</a><br><a href="#" target="_blank">Voorwaarden</a> <a href="#" target="_blank">Privacy</a></p>
     </div>
 
   </div>

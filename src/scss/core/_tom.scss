@@ -1,10 +1,16 @@
 html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
     height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+    overflow-x: hidden;
 }
 
 .style-modal {
@@ -31,6 +37,7 @@ body {
     max-width: 90%;
     max-height: 80%;
     width: 1380px;
+    z-index: 999;
 }
 
 .modal-content-container {
@@ -161,11 +168,9 @@ body {
 .button {
     cursor: pointer;
     position: relative;
+    display: inline-flex;
     overflow: auto;
-    display: flex;
-
     flex-shrink: 0;
-    align-items: center;
     justify-content: center;
     font-family: $poppins;
     font-weight: 500;
@@ -175,11 +180,14 @@ body {
     color: $white;
     background: $blue;
     border-radius: 5px;
-    height: 50px;
-    padding: 0 22px;
-    -webkit-transition: all ease-out .2s;
+    padding: 18px 22px;
     transition: all ease-out .2s;
     position: relative;
+
+    &:hover,
+    &:focus {
+        background: darken($blue, 15%);
+    }
 
     &.orange {
         background-color: $orange;
@@ -879,7 +887,11 @@ h1.instruction-titel {
     .mobile.footer-container {
         display: block;
         position: relative;
-        padding: 0px 75px;
+        padding: 20px 75px;
+    }
+
+    .footer-text {
+        text-align: center;
     }
 
     .step-buttons-error-message {
@@ -916,7 +928,18 @@ h1.instruction-titel {
     }
 
     .step-buttons-container.mobile {
-        padding: 60px 75px;
+        border: 1px solid $border;
+        position: sticky;
+        bottom: 0;
+        background: $white;
+        width: 100%;
+        box-sizing: border-box;
+        z-index: 900;
+        padding: 30px 75px;
+
+        div {
+            z-index: 999;
+        }
     }
 
     .video-container {
@@ -930,15 +953,27 @@ h1.instruction-titel {
     }
 
     .mobile.footer-container {
-        padding: 0px 35px;
+        padding: 10px 35px;
+    }
+
+    .footer-text {
+        text-align: center;
     }
 
     .step-buttons-container.mobile {
-        padding: 60px 35px;
+        padding: 30px 35px;
+        border: 1px solid $border;
+        position: sticky;
+        bottom: 55px;
+        bottom: 0;
+        background: $white;
+        width: 100%;
+        box-sizing: border-box;
+        z-index: 100;
     }
 
     .inputform-col.left {
-        padding: 35px;
+        padding: 20px;
     }
 
     .inputform-inner-col.left {
@@ -946,7 +981,7 @@ h1.instruction-titel {
     }
 
     .inputform-col.right {
-        padding: 35px;
+        padding: 20px;
     }
 
     .drop-zone__prompt p {

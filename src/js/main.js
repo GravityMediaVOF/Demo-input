@@ -1,5 +1,5 @@
 //Step function
-let current_step = 7;
+let current_step = 6;
 let all_steps = document.querySelectorAll('.step');
 
 function Step() {
