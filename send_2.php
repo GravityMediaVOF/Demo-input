@@ -10,7 +10,7 @@ if (is_array($_POST)) {
 $_ZAP_ARRAY = http_build_query($_POST['data']);
 
 //print_r($_ZAP_ARRAY);
-$ZAPIER_HOOK_URL = "https://hooks.zapier.com/hooks/catch/6427719/3ycd7t5/";
+// $ZAPIER_HOOK_URL = "https://hooks.zapier.com/hooks/catch/6427719/3ycd7t5/";
 
 $ch = curl_init($ZAPIER_HOOK_URL);
 curl_setopt($ch, CURLOPT_POST, 1);

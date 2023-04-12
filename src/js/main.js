@@ -1,5 +1,5 @@
 //Step function
-let current_step = 0;
+let current_step = 7;
 let all_steps = document.querySelectorAll('.step');
 
 function Step() {
@@ -12,7 +12,7 @@ function Step() {
     document.querySelector(".step-buttons-container.mobile").style.display = "";
   }
 
-  if (current_step == 6) {
+  if (current_step == 7) {
     document.querySelector(".step-buttons-container.bottom").style.display = "none";
     document.querySelector(".step-buttons-container.mobile").style.display = "none";
   }
@@ -105,21 +105,21 @@ let styles = document.querySelectorAll('.style-modal .stijl');
 let choose_style_buttons = document.querySelectorAll('.style-modal .choose-style');
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 }
 
 //Close button
-modal_close.onclick = function() {
+modal_close.onclick = function () {
   modal.style.display = "none";
 }
 
 
 //Magnifying glass open modal showing right content
 for (var i = 0; i < magnifying_glasses.length; i++) {
-  magnifying_glasses[i].onclick = function() {
+  magnifying_glasses[i].onclick = function () {
     let clicked_glass = this.parentNode.parentNode.dataset.name;
     console.log();
     modal.style.display = "block";
@@ -139,7 +139,7 @@ for (var i = 0; i < magnifying_glasses.length; i++) {
 let thumbnails = document.querySelectorAll('.modal-gallery-thumbnail');
 
 for (var i = 0; i < thumbnails.length; i++) {
-  thumbnails[i].onclick = function() {
+  thumbnails[i].onclick = function () {
     this.parentNode.previousElementSibling.querySelector('img').src = this.querySelector('img').src;
     thumbnails_chosen = this.parentNode.querySelectorAll('.modal-gallery-thumbnail');
     for (var i = 0; i < thumbnails_chosen.length; i++) {
@@ -153,7 +153,7 @@ for (var i = 0; i < thumbnails.length; i++) {
 
 //Modal choose style button
 for (var i = 0; i < choose_style_buttons.length; i++) {
-  choose_style_buttons[i].onclick = function() {
+  choose_style_buttons[i].onclick = function () {
     modal.style.display = "none";
     current_step = current_step + 1;
     Step();
@@ -314,7 +314,7 @@ next_button.addEventListener("click", function () {
     }
 
   }
-  else if (current_step < 6) {
+  else if (current_step < 7) {
     current_step = current_step + 1;
     document.querySelector('.step-buttons-error-message').style.display = "none";
     Step();

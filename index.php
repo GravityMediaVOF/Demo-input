@@ -12,6 +12,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
+
+  <!-- demo generation -->
+  <script src="./src/js/getDemo.js"></script>
+
   <title></title>
 </head>
 
@@ -84,6 +88,13 @@
           </div>
 
           <div class="step step6" data-step="6">
+            <div class="instruction-container">
+              <h4 class="instruction-subtitel">Advies</h4>
+              <h2 class="instruction-titel">Demo afspraak</h2>
+              <p>Maak via het formulier een afspraak om je persoonlijke demo te bevestigen. Onze expert laat je dan in 20 minuten zien hoe de website jouw online groei faciliteert.</p>
+            </div>
+          </div>
+          <div class="step step7" data-step="7">
             <div class="instruction-container">
               <h4 class="instruction-subtitel">Advies</h4>
               <h2 class="instruction-titel">Demo afspraak</h2>
@@ -453,6 +464,14 @@
               <div class="maildemo-container">
                 <div class="maildemo-button">Stuur de demo per e-mail</div>
               </div>
+            </div>
+          </div>
+
+          <!-- HIER IS DE DEMO CAS -->
+
+          <div class="step step7" data-step="7">
+            <div class="demo-container">
+              <iframe id="demoFrame" frameborder="0" marginwidth="0" marginheight="0" scrolling="YES" width="100%" height="100%"></iframe>
             </div>
           </div>
 
