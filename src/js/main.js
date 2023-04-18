@@ -1,6 +1,28 @@
 //Step function
-let current_step = 6;
+let current_step = 0;
 let all_steps = document.querySelectorAll('.step');
+
+//id in urlparameters -> direct to personal demo
+const urlParams = new URLSearchParams(window.location.search);
+const demoId = urlParams.get('id');
+
+if (demoId) {
+  const xhr = new XMLHttpRequest();
+  const url = `fetch_data.php?id=${demoId}`;
+  xhr.open('GET', url, true);
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      const data = xhr.responseText;
+      const frameParams = data;
+      document.querySelector('#demoFrame').src = "https://skelter.cfdemo4.nl/demo/?" + data;
+    } else {
+      console.error('Error fetching data from database');
+    }
+  };
+  xhr.send();
+
+  current_step = 7;
+}
 
 function Step() {
   if (current_step == 0) {
@@ -11,8 +33,37 @@ function Step() {
     document.querySelector(".step-buttons-container.bottom").style.display = "";
     document.querySelector(".step-buttons-container.mobile").style.display = "";
   }
+  const directParam = urlParams.get('direct');
+
+  // Check if the "direct" parameter is true and the current step is 6
+  if (directParam === 'true' && current_step === 6) {
+    document.querySelector(".step-buttons-previous").style.display = "none";
+    document.querySelector(".step-buttons-next").style.display = "none";
+    document.querySelector(".step6 .step-buttons-begin.button.demo-direct").style.width = "90%";
+    document.querySelector(".step6 .step-buttons-begin.button.demo-direct").textContent = "Direct genereren";
+    document.querySelector(".step6 h2").textContent = "Afspraak maken of direct genereren";
+  }
+  if (directParam != 'true' && current_step == 6) {
+    document.querySelector(".step-buttons-previous").style.display = "none";
+    document.querySelector(".step-buttons-next").style.display = "none";
+    document.querySelector(".step6 .step-buttons-begin.button.demo-direct").style.display = "none";
+
+  }
 
   if (current_step == 7) {
+
+
+    $( ".loading-screen" ).css("display", "flex");
+    $( ".loading-screen" ).css("opacity", "1");
+    setTimeout(() => {
+      $( ".loading-screen" ).animate({
+        opacity: 0
+      }, 1000, function() {
+        $( ".loading-screen" ).css("display", "none");
+        $(' html, body').css({overflow: 'auto'});
+      });
+    }, 3000);
+
     document.body.classList.add("container_full");
     document.querySelector(".step-buttons-container.bottom").style.display = "none";
     document.querySelector(".step-buttons-container.mobile").style.display = "none";
@@ -223,7 +274,11 @@ let gegevens_inputs = document.querySelectorAll('.gegevens-input input');
 let hex_inputs = document.querySelectorAll('.colors-combination-custom-input .hexinput');
 
 previous_button.addEventListener("click", function () {
-  if (current_step > 0) {
+  if (current_step == 3) {
+    current_step = current_step - 2;
+    Step();
+  }
+  else if (current_step > 0) {
     current_step = current_step - 1;
     document.querySelector('.step-buttons-error-message').style.display = "none";
     Step();
@@ -235,6 +290,10 @@ next_button.addEventListener("click", function () {
     document.querySelector('.step-buttons-error-message').innerHTML = "Kies tenminste één optie om door te gaan.";
     document.querySelector('.step-buttons-error-message').style.display = "block";
     ScrollToTopDesktop();
+  }
+  else if (current_step == 1) {
+    current_step = current_step + 2;
+    Step();
   }
   else if (current_step == 3 && document.querySelector('.vinkopties-container.colors .vinkopties-optie[data-name="custom"]').classList.contains('active')) {
     let input_error = false;
@@ -323,7 +382,11 @@ next_button.addEventListener("click", function () {
 });
 
 previous_button_mobile.addEventListener("click", function () {
-  if (current_step > 0) {
+  if (current_step == 3) {
+    current_step = current_step - 2;
+    Step();
+  }
+  else if (current_step > 0) {
     current_step = current_step - 1;
     document.querySelector('.step-buttons-error-message').style.display = "none";
     Step();
@@ -335,6 +398,10 @@ next_button_mobile.addEventListener("click", function () {
     document.querySelector('.step-buttons-error-message').innerHTML = "Kies tenminste één optie om door te gaan.";
     document.querySelector('.step-buttons-error-message').style.display = "block";
     ScrollToTopDesktop();
+  }
+  else if (current_step == 1) {
+    current_step = current_step + 2;
+    Step();
   }
   else if (current_step == 3 && document.querySelector('.vinkopties-container.colors .vinkopties-optie[data-name="custom"]').classList.contains('active')) {
     let input_error = false;
@@ -526,28 +593,22 @@ function PostEmail() {
 }
 
 
-
+var image_url;
 //Post logo to server
 function PostLogo() {
   if (document.querySelector('.vinkopties-container .vinkopties-optie[data-name="upload"]').classList.contains('active')) {
     const file = document.querySelector('.drop-zone .drop-zone__input').files[0];
-    //var bedrijfsnaam = document.querySelector('.step5 .gegevens-input .bedrijfsnaam').value;
     var id = Math.floor(Math.random() * (99999 - 10000) + 10000);
     var name = './demo_logos/' + id + '-' + document.querySelector('.drop-zone .drop-zone__input').files[0].name;
     var urlname = '/demo_logos/' + id + '-' + document.querySelector('.drop-zone .drop-zone__input').files[0].name;
-    console.log(file);
     const reader = new FileReader();
     reader.onloadend = () => {
-      // Use a regex to remove data url part
       const data = reader.result.replace('data:', '').replace(/^.+,/, '');
-
-      console.log(data);
       $.post('send_logo.php', { data: data, name });
     };
     reader.readAsDataURL(file);
-    var image_url = "https://demo.companyfuel.dev" + urlname;
+    image_url = window.location.href.split('?')[0] + urlname;
     PostChoices(image_url);
-    console.log(image_url);
   }
   else {
     PostChoices("");
@@ -637,3 +698,19 @@ function updateThumbnail(dropZoneElement, file) {
     thumbnailElement.style.backgroundImage = null;
   }
 }
+
+
+
+
+
+// Loading screen
+window.addEventListener("load", (event) => {
+  setTimeout(() => {
+    $( ".loading-screen" ).animate({
+      opacity: 0
+    }, 1000, function() {
+      $( ".loading-screen" ).css("display", "none");
+      $(' html, body').css({overflow: 'auto'});
+    });
+  }, 1000);
+});
