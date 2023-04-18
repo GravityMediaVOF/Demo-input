@@ -1,3 +1,9 @@
+<?php
+header("Cache-Control: no-cache, must-revalidate"); // HTTP 1.1
+header("Pragma: no-cache"); // HTTP 1.0
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -20,6 +26,7 @@
 </head>
 
 <body>
+
   <div class="top_bar_menu">
     <div class="top_container">
       <a href="https://www.companyfuel.nl/" target="_blank">
@@ -37,7 +44,10 @@
   </div>
   <div class="inputform-container">
 
-
+    <div class="loading-screen">
+      <span class="loader"></span>
+      <p></p>
+    </div>
 
 
     <div class="inputform-col left">
@@ -102,6 +112,9 @@
               <h4 class="instruction-subtitel">Advies</h4>
               <h2 class="instruction-titel">Demo afspraak</h2>
               <p>Maak via het formulier een afspraak om je persoonlijke demo te bevestigen. Onze expert laat je dan in 20 minuten zien hoe de website jouw online groei faciliteert.</p>
+              <div class="step-buttons-container">
+                <div class="step-buttons-begin button demo-direct">Direct genereren</div>
+              </div>
             </div>
           </div>
           <div class="step step7" data-step="7">
@@ -310,8 +323,6 @@
                     <div class="colors-combination-container">
                       <div class="colors-combination-color color-1-1"></div>
                       <div class="colors-combination-color color-1-2"></div>
-                      <div class="colors-combination-color color-1-3"></div>
-                      <div class="colors-combination-color color-1-4"></div>
                     </div>
                   </div>
                 </div>
@@ -323,8 +334,6 @@
                     <div class="colors-combination-container">
                       <div class="colors-combination-color color-2-1"></div>
                       <div class="colors-combination-color color-2-2"></div>
-                      <div class="colors-combination-color color-2-3"></div>
-                      <div class="colors-combination-color color-2-4"></div>
                     </div>
                   </div>
                 </div>
@@ -336,8 +345,6 @@
                     <div class="colors-combination-container">
                       <div class="colors-combination-color color-3-1"></div>
                       <div class="colors-combination-color color-3-2"></div>
-                      <div class="colors-combination-color color-3-3"></div>
-                      <div class="colors-combination-color color-3-4"></div>
                     </div>
                   </div>
                 </div>
@@ -349,8 +356,6 @@
                     <div class="colors-combination-container">
                       <div class="colors-combination-color color-4-1"></div>
                       <div class="colors-combination-color color-4-2"></div>
-                      <div class="colors-combination-color color-4-3"></div>
-                      <div class="colors-combination-color color-4-4"></div>
                     </div>
                   </div>
                 </div>
@@ -472,13 +477,13 @@
                 <!-- Calendly inline widget end -->
               </div>
               <div class="maildemo-container">
-                <div class="maildemo-button">Stuur de demo per e-mail</div>
+                <div class="maildemo-button demo-direct">Stuur de demo per e-mail</div>
               </div>
             </div>
           </div>
 
           <div class="step step7" data-step="7">
-            <div class="demo-container demo-container-mobile">
+            <div class="demo-container">
               <iframe id="demoFrame" frameborder="0" marginwidth="0" marginheight="0" scrolling="YES" width="100%" height="100%"></iframe>
             </div>
           </div>
@@ -769,9 +774,6 @@
             </div>
             <div class="button choose-style">Deze stijl kiezen</div>
           </div>
-
-
-
         </div>
       </div>
     </div>
