@@ -477,7 +477,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
                 <!-- Calendly inline widget end -->
               </div>
               <div class="maildemo-container">
-                <div class="maildemo-button demo-direct">Stuur de demo per e-mail</div>
+                <div class="maildemo-button">Stuur de demo per e-mail</div>
               </div>
             </div>
           </div>

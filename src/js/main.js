@@ -52,15 +52,14 @@ function Step() {
 
   if (current_step == 7) {
 
-
-    $( ".loading-screen" ).css("display", "flex");
-    $( ".loading-screen" ).css("opacity", "1");
+    $(".loading-screen").css("display", "flex");
+    $(".loading-screen").css("opacity", "1");
     setTimeout(() => {
-      $( ".loading-screen" ).animate({
+      $(".loading-screen").animate({
         opacity: 0
-      }, 1000, function() {
-        $( ".loading-screen" ).css("display", "none");
-        $(' html, body').css({overflow: 'auto'});
+      }, 2000, function () {
+        $(".loading-screen").css("display", "none");
+        $(' html, body').css({ overflow: 'auto' });
       });
     }, 3000);
 
@@ -583,12 +582,95 @@ function PostChoices(imageurl) {
 }
 
 
-//Post emailadres
 function PostEmail() {
-  let mail = new Array();
-  mail.push({ 'email': document.querySelector('.step5 .gegevens-input .email').value });
-  $.post('send_2.php', { data: mail }).done(function () {
-    window.location = "https://www.companyfuel.nl/bedankt?succes=true";
+
+  let vinkopties = document.querySelectorAll('.step1 .vinkopties-container .vinkopties-optie');
+  let doelen = null;
+  for (var i = 0; i < vinkopties.length; i++) {
+    if (vinkopties[i].classList.contains("active")) {
+      let name = vinkopties[i].dataset.name;
+      (doelen == null) ? doelen = name : doelen = doelen + ", " + name;
+    }
+  }
+
+  let uitstraling = document.querySelector('.step2 .vinkopties-container .vinkopties-optie.active').dataset.name;
+  kleuren = document.querySelector('.step3 .vinkopties-container .vinkopties-optie.active').dataset.name;
+
+  let logo = document.querySelector('.step4 .vinkopties-container .vinkopties-optie.active').dataset.name;
+  (logo == "later") ? logo = "https://www.gmskeleton.nl/wp-content/uploads/2019/12/placeholder.com-logo1.png" : logo = image_url;
+  console.log(image_url);
+
+  let voornaam = document.querySelector('.step5 .gegevens-input .voornaam').value;
+  let achternaam = document.querySelector('.step5 .gegevens-input .achternaam').value;
+  let bedrijfsnaam = document.querySelector('.step5 .gegevens-input .bedrijfsnaam').value;
+  let email = document.querySelector('.step5 .gegevens-input .email').value;
+  let telefoon = document.querySelector('.step5 .gegevens-input .telefoon').value;
+  let primaryColor;
+  let secondaryColor;
+  const customPrimary = document.querySelector('.step3 .vinkopties-container .vinkopties-optie .hexinput.primary').value;
+  const customSecondary = document.querySelector('.step3 .vinkopties-container .vinkopties-optie .hexinput.secondary').value;
+  switch (kleuren) {
+    case "combi1":
+      primaryColor = "3A61EF";
+      secondaryColor = "1540A0";
+      break;
+    case "combi2":
+      primaryColor = "FFBB33";
+      secondaryColor = "FF7C1A";
+      break;
+    case "combi3":
+      primaryColor = "7A9B6B";
+      secondaryColor = "53774B";
+      break;
+    case "combi4":
+      primaryColor = "88758E";
+      secondaryColor = "59525B";
+      break;
+    case "custom":
+      primaryColor = customPrimary.slice(1);
+      secondaryColor = customSecondary.slice(1);
+      break;
+  }
+
+  const urlParameters = `demo=true&bedrijfsnaam=${bedrijfsnaam}&heroBg=https://images.unsplash.com/photo-1508873699372-7aeab60b44ab&primaryColor=${primaryColor}&secondaryColor=${secondaryColor}&bedrijfsnaam=${bedrijfsnaam}&logoUrl=${logo}&info%40companyfuel.nl=${email}&uitstraling=${uitstraling}`;
+
+  const xhr = new XMLHttpRequest();
+  xhr.open('POST', '../../save.php');
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+
+
+      const newId = xhr.responseText;
+      console.log(`Data saved successfully! New ID is ${newId}`);
+      $.post('sendMail.php', { email: email, name: voornaam, bedrijfsnaam: bedrijfsnaam, newId: newId }).done(function () {
+        window.location = "https://www.companyfuel.nl/bedankt?succes=true";
+      });
+    } else {
+      console.log('Data could not be saved!');
+    }
+  };
+  xhr.onerror = function () {
+    console.log('Error occurred while saving data!');
+  };
+  const data = new URLSearchParams();
+  data.append('url_parameters', urlParameters);
+  data.append('doelen', doelen);
+  data.append('uitstraling', uitstraling);
+  data.append('kleuren', kleuren);
+  data.append('step3_custom_secondary', null);
+  data.append('step3_option', 'Option 2');
+  data.append('logo_option', 'Option 3');
+  data.append('logo_url', logo);
+  data.append('first_name', voornaam);
+  data.append('last_name', achternaam);
+  data.append('company_name', bedrijfsnaam);
+  data.append('email', email);
+  data.append('phone_number', telefoon);
+
+  xhr.send(data);
+  data.forEach(element => {
+    console.log(element);
   });
 }
 
@@ -706,11 +788,11 @@ function updateThumbnail(dropZoneElement, file) {
 // Loading screen
 window.addEventListener("load", (event) => {
   setTimeout(() => {
-    $( ".loading-screen" ).animate({
+    $(".loading-screen").animate({
       opacity: 0
-    }, 1000, function() {
-      $( ".loading-screen" ).css("display", "none");
-      $(' html, body').css({overflow: 'auto'});
+    }, 1000, function () {
+      $(".loading-screen").css("display", "none");
+      $(' html, body').css({ overflow: 'auto' });
     });
   }, 1000);
 });
