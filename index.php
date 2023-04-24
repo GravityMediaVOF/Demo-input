@@ -481,8 +481,9 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
             <div class="afspraak-container">
               <div class="iframe-container">
                 <!-- Calendly inline widget begin -->
-                <div class="calendly-inline-widget" data-url="https://calendly.com/company-fuel/plan-website-demo?hide_event_type_details=1&hide_gdpr_banner=1&text_color=14223b&primary_color=2d1eed" style="position: relative;min-width:320px;height:750px;"></div>
+                <div class="calendly-inline-widget" data-url="https://calendly.com/company-fuel/plan-website-demo?hide_event_type_details=1&hide_gdpr_banner=1&text_color=14223b&primary_color=2d1eed" style="min-width:320px;height:750px;"></div>
                 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                <!-- Calendly inline widget end -->
               </div>
               <div class="maildemo-container">
                 <div class="maildemo-button">Stuur de demo per e-mail</div>

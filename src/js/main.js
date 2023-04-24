@@ -1,5 +1,5 @@
 //Step function
-let current_step = 0;
+let current_step = 6;
 let all_steps = document.querySelectorAll('.step');
 
 //id in urlparameters -> direct to personal demo
