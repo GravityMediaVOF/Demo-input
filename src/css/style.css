@@ -65,6 +65,76 @@ body {
   overflow-x: hidden;
 }
 
+.loading-screen {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FEFEFE;
+  z-index: 999999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #EBEBEC;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-animation: rotation 1s linear infinite;
+          animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+  content: '';
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-bottom-color: #2d1eed;
+}
+
+@-webkit-keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .style-modal {
   display: none;
   position: fixed;
@@ -432,7 +502,7 @@ body {
 }
 
 h1.instruction-titel {
-  font-size: 3.2rem;
+  font-size: 2.5rem;
   line-height: 1.6em;
   margin-bottom: 30px;
 }
@@ -568,6 +638,10 @@ h1.instruction-titel {
   margin-right: 20px;
 }
 
+.vinkopties-vink.vinkopties-vink-radio {
+  border-radius: 5555px;
+}
+
 .vinkopties-optie.active .vinkopties-vink {
   border: 2px solid #ff623e;
   background-color: #ff623e;
@@ -602,11 +676,18 @@ h1.instruction-titel {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .vinkopties-subtitel {
   font-size: 20px;
   margin-bottom: 15px;
+}
+
+.vinkopties-subtitel.vinkopties-subtitel-no-space {
+  margin-bottom: 0;
 }
 
 .vinkopties-p {
@@ -1044,7 +1125,7 @@ h1.instruction-titel {
 
 @media only screen and (max-width: 650px) {
   h1.instruction-titel {
-    font-size: 3rem;
+    font-size: 2.3rem;
   }
   .mobile.footer-container {
     padding: 10px 35px;
@@ -1323,72 +1404,4 @@ input {
 .container_full .inputform-container .inputform-col .inputform-inner-col {
   padding: 0;
   max-width: 100%;
-}
-
-.loading-screen {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #F3F5F9;
-  z-index: 999999;
-  display: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.loader {
-  width: 48px;
-  height: 48px;
-  border: 3px solid #e4e3e3;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-animation: rotation 1s linear infinite;
-          animation: rotation 1s linear infinite;
-}
-
-.loader::after {
-  content: '';
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  border: 3px solid transparent;
-  border-bottom-color: #2d1eed;
-}
-
-@-webkit-keyframes rotation {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes rotation {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
 }

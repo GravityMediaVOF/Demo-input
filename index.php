@@ -117,11 +117,20 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
               </div>
             </div>
           </div>
+
           <div class="step step7" data-step="7">
             <div class="instruction-container">
               <h4 class="instruction-subtitel">Advies</h4>
               <h2 class="instruction-titel">Demo afspraak</h2>
               <p>Maak via het formulier een afspraak om je persoonlijke demo te bevestigen. Onze expert laat je dan in 20 minuten zien hoe de website jouw online groei faciliteert.</p>
+            </div>
+
+          </div>
+          <div class="step step8" data-step="8">
+            <div class="instruction-container">
+              <h4 class="instruction-subtitel">Structuur</h4>
+              <h1 class="instruction-titel">In welke branche zit je?</h1>
+              <p>Kies de branche waarin je actief bent, staat deze er niet tussen kies dan de optie anders.</p>
             </div>
           </div>
 
@@ -317,7 +326,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
               <div class="duo-grid">
 
                 <div class="vinkopties-optie active" data-name="combi1">
-                  <div class="vinkopties-vink"></div>
+                  <div class="vinkopties-vink vinkopties-vink-radio"></div>
                   <div class="vinkopties-text">
                     <h4 class="vinkopties-subtitel">Betrouwbaar</h4>
                     <div class="colors-combination-container">
@@ -328,7 +337,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
                 </div>
 
                 <div class="vinkopties-optie" data-name="combi2">
-                  <div class="vinkopties-vink"></div>
+                  <div class="vinkopties-vink vinkopties-vink-radio"></div>
                   <div class="vinkopties-text">
                     <h4 class="vinkopties-subtitel">Levendig</h4>
                     <div class="colors-combination-container">
@@ -339,7 +348,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
                 </div>
 
                 <div class="vinkopties-optie" data-name="combi3">
-                  <div class="vinkopties-vink"></div>
+                  <div class="vinkopties-vink vinkopties-vink-radio"></div>
                   <div class="vinkopties-text">
                     <h4 class="vinkopties-subtitel">Sfeervol</h4>
                     <div class="colors-combination-container">
@@ -350,7 +359,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
                 </div>
 
                 <div class="vinkopties-optie" data-name="combi4">
-                  <div class="vinkopties-vink"></div>
+                  <div class="vinkopties-vink vinkopties-vink-radio"></div>
                   <div class="vinkopties-text">
                     <h4 class="vinkopties-subtitel">Neutraal</h4>
                     <div class="colors-combination-container">
@@ -363,7 +372,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
               </div>
 
               <div class="vinkopties-optie" data-name="custom">
-                <div class="vinkopties-vink"></div>
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
                 <div class="vinkopties-text">
                   <h4 class="vinkopties-subtitel">Eigen kleuren gebruiken</h4>
                   <p class="vinkopties-p">Voer de juiste hex-code in of selecteer de juiste kleuren met onze color picker</p>
@@ -402,7 +411,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
             <div class="vinkopties-container exclusive">
 
               <div class="vinkopties-optie active" data-name="upload">
-                <div class="vinkopties-vink"></div>
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
                 <div class="vinkopties-text">
                   <h4 class="vinkopties-subtitel">Logo uploaden</h4>
                   <p class="vinkopties-p">Ik heb al een goed logo voor mijn bedrijf, en wil er dus geen meer laten maken.</p>
@@ -420,7 +429,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
               </div>
 
               <div class="vinkopties-optie" data-name="later">
-                <div class="vinkopties-vink"></div>
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
                 <div class="vinkopties-text">
                   <h4 class="vinkopties-subtitel">Logo later toevoegen</h4>
                   <p class="vinkopties-p">Deze stap overslaan en later een logo toevoegen.</p>
@@ -487,6 +496,55 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
               <iframe id="demoFrame" frameborder="0" marginwidth="0" marginheight="0" scrolling="YES" width="100%" height="100%"></iframe>
             </div>
           </div>
+
+          <div class="step step8" data-step="8">
+            <div class="vinkopties-container single-check">
+
+              <div class="vinkopties-optie active" data-name="advies_consultancy">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Advies en consultancy</h4>
+                </div>
+              </div>
+
+              <div class="vinkopties-optie" data-name="financiele_dienstverlening">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Financiële dienstverlening</h4>
+                </div>
+              </div>
+
+              <div class="vinkopties-optie" data-name="juridische_dienstverlening">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Juridische dienstverlening</h4>
+                </div>
+              </div>
+
+              <div class="vinkopties-optie" data-name="it_dienstverlening">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">IT-dienstverlening</h4>
+                </div>
+              </div>
+
+              <div class="vinkopties-optie" data-name="marketing_communicatie">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Marketing en communicatie</h4>
+                </div>
+              </div>
+
+              <div class="vinkopties-optie" data-name="human_resources">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Human resources (HR)</h4>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
 
 
 
