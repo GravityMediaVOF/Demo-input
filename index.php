@@ -126,13 +126,13 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
             </div>
 
           </div>
-          <div class="step step8" data-step="8">
+          <!-- <div class="step step8" data-step="8">
             <div class="instruction-container">
               <h4 class="instruction-subtitel">Structuur</h4>
               <h1 class="instruction-titel">In welke branche zit je?</h1>
               <p>Kies de branche waarin je actief bent, staat deze er niet tussen kies dan de optie anders.</p>
             </div>
-          </div>
+          </div> -->
 
           <div class="step-buttons-container bottom desktop">
             <div class="step-buttons-previous">Vorige stap</div>
@@ -144,7 +144,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
         </div>
 
         <div class="footer-container desktop">
-          <p class="footer-text">Powered by <a class="cf" href="https://www.companyfuel.nl/" target="_blank">company fuel</a><a href="https://www.companyfuel.nl/algemene-voorwaarden/https://www.companyfuel.nl/privacybeleid/" target="_blank">Voorwaarden</a> <a href="" target="_blank">Privacy</a></p>
+          <p class="footer-text">Powered by <a class="cf" href="https://www.companyfuel.nl/" target="_blank">company fuel</a><a href="https://www.companyfuel.nl/algemene-voorwaarden/" target="_blank">Voorwaarden</a> <a href="https://www.companyfuel.nl/privacybeleid/" target="_blank">Privacy</a></p>
         </div>
 
       </div>
@@ -497,7 +497,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
             </div>
           </div>
 
-          <div class="step step8" data-step="8">
+          <!-- <div class="step step8" data-step="8">
             <div class="vinkopties-container single-check">
 
               <div class="vinkopties-optie active" data-name="advies_consultancy">
@@ -543,7 +543,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
               </div>
 
             </div>
-          </div>
+          </div> -->
 
 
 
@@ -563,7 +563,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
     </div>
 
     <div class="footer-container mobile">
-      <p class="footer-text"><a class="cf" href="https://www.companyfuel.nl/" target="_blank">company fuel</a><br><a href="#" target="_blank">Voorwaarden</a> <a href="#" target="_blank">Privacy</a></p>
+      <p class="footer-text"><a class="cf" href="https://www.companyfuel.nl/" target="_blank">company fuel</a><br><a href="https://www.companyfuel.nl/algemene-voorwaarden/" target="_blank">Voorwaarden</a> <a href="https://www.companyfuel.nl/privacybeleid/" target="_blank">Privacy</a></p>
     </div>
 
   </div>
