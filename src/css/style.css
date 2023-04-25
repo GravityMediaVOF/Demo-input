@@ -914,7 +914,7 @@ h1.instruction-titel {
 }
 
 .drop-zone {
-  height: 50px;
+  max-height: 500px;
   padding: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -933,6 +933,10 @@ h1.instruction-titel {
   color: #14223b;
   border: 2px dashed #e4e3e3;
   border-radius: 5px;
+}
+
+.drop-zone:not([style]) {
+  min-height: 50px;
 }
 
 .drop-zone__prompt {
@@ -978,8 +982,10 @@ h1.instruction-titel {
   height: 100%;
   border-radius: 10px;
   overflow: hidden;
-  background-color: #cccccc;
-  background-size: cover;
+  background-color: #eeeeee;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   position: relative;
 }
 
@@ -991,9 +997,19 @@ h1.instruction-titel {
   width: 100%;
   padding: 5px 0;
   color: #ffffff;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.4);
   font-size: 14px;
   text-align: center;
+}
+
+.logo-upload-container .drop-zone__label {
+  margin-top: 5px;
+  font-size: .875rem;
+  color: #858585;
+}
+
+.logo-upload-container .drop-zone__title {
+  margin-bottom: 5px;
 }
 
 .gegevens-input {

@@ -416,13 +416,14 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
                   <h4 class="vinkopties-subtitel">Logo uploaden</h4>
                   <p class="vinkopties-p">Ik heb al een goed logo voor mijn bedrijf, en wil er dus geen meer laten maken.</p>
                   <div class="logo-upload-container">
-                    <p>Plaats je logo hier</p>
+                    <p class="drop-zone__title">Plaats je logo hier</p>
                     <div class="drop-zone">
                       <div class="drop-zone__prompt"><span>Logo zoeken </span>
                         <p> of drag and drop.</p>
                       </div>
-                      <input type="file" name="logo_upload" class="drop-zone__input">
+                      <input type="file" name="logo_upload" class="drop-zone__input" accept="image/*">
                     </div>
+                    <p class="drop-zone__label">Ondersteunde bestandsformaten: .png, .webp, .svg, .jpg</p>
                   </div>
 
                 </div>

@@ -1,5 +1,5 @@
 //Step function
-let current_step = 6;
+let current_step = 4;
 let all_steps = document.querySelectorAll('.step');
 
 //id in urlparameters -> direct to personal demo
@@ -766,7 +766,7 @@ function updateThumbnail(dropZoneElement, file) {
     dropZoneElement.appendChild(thumbnailElement);
   }
 
-  thumbnailElement.dataset.label = file.name;
+  thumbnailElement.dataset.label = file.name + " geüpload ✓";
 
   // Show thumbnail for image files
   if (file.type.startsWith("image/")) {
@@ -775,6 +775,17 @@ function updateThumbnail(dropZoneElement, file) {
     reader.readAsDataURL(file);
     reader.onload = () => {
       thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+
+      const img = new Image();
+      img.src = reader.result;
+
+      img.onload = () => {
+        const aspectRatio = img.width / img.height;
+        const maxHeight = img.height + 24;
+        console.log(aspectRatio)
+        dropZoneElement.style.aspectRatio = aspectRatio;
+        dropZoneElement.style.maxHeight = `${maxHeight}px`;
+      };
     };
   } else {
     thumbnailElement.style.backgroundImage = null;

@@ -786,7 +786,10 @@ h1.instruction-titel {
 .logo-upload-upload {}
 
 .drop-zone {
-    height: 50px;
+    &:not([style]){
+        min-height: 50px;
+    }
+    max-height: 500px;
     padding: 25px;
     display: flex;
     align-items: center;
@@ -840,8 +843,10 @@ h1.instruction-titel {
     height: 100%;
     border-radius: 10px;
     overflow: hidden;
-    background-color: #cccccc;
-    background-size: cover;
+    background-color: #eeeeee;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     position: relative;
 }
 
@@ -853,12 +858,20 @@ h1.instruction-titel {
     width: 100%;
     padding: 5px 0;
     color: $white;
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.4);
     font-size: 14px;
     text-align: center;
 }
 
+.logo-upload-container .drop-zone__label {
+    margin-top: 5px;
+    font-size: .875rem;
+    color: #858585;
+}
 
+.logo-upload-container .drop-zone__title {
+    margin-bottom: 5px;
+}
 
 
 
