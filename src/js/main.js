@@ -1,5 +1,5 @@
 //Step function
-let current_step = 4;
+let current_step = 0;
 let all_steps = document.querySelectorAll('.step');
 
 //id in urlparameters -> direct to personal demo
@@ -273,11 +273,11 @@ let gegevens_inputs = document.querySelectorAll('.gegevens-input input');
 let hex_inputs = document.querySelectorAll('.colors-combination-custom-input .hexinput');
 
 previous_button.addEventListener("click", function () {
-  if (current_step == 3) {
-    current_step = current_step - 2;
-    Step();
-  }
-  else if (current_step > 0) {
+  // if (current_step == 3) {
+  //   current_step = current_step - 2;
+  //   Step();
+  // }
+  if (current_step > 0) {
     current_step = current_step - 1;
     document.querySelector('.step-buttons-error-message').style.display = "none";
     Step();
@@ -290,10 +290,10 @@ next_button.addEventListener("click", function () {
     document.querySelector('.step-buttons-error-message').style.display = "block";
     ScrollToTopDesktop();
   }
-  else if (current_step == 1) {
-    current_step = current_step + 2;
-    Step();
-  }
+  // else if (current_step == 1) {
+  //   current_step = current_step + 2;
+  //   Step();
+  // }
   else if (current_step == 3 && document.querySelector('.vinkopties-container.colors .vinkopties-optie[data-name="custom"]').classList.contains('active')) {
     let input_error = false;
     for (var i = 0; i < hex_inputs.length; i++) {
@@ -381,11 +381,11 @@ next_button.addEventListener("click", function () {
 });
 
 previous_button_mobile.addEventListener("click", function () {
-  if (current_step == 3) {
-    current_step = current_step - 2;
-    Step();
-  }
-  else if (current_step > 0) {
+  // if (current_step == 3) {
+  //   current_step = current_step - 2;
+  //   Step();
+  // }
+  if (current_step > 0) {
     current_step = current_step - 1;
     document.querySelector('.step-buttons-error-message').style.display = "none";
     Step();
@@ -398,10 +398,10 @@ next_button_mobile.addEventListener("click", function () {
     document.querySelector('.step-buttons-error-message').style.display = "block";
     ScrollToTopDesktop();
   }
-  else if (current_step == 1) {
-    current_step = current_step + 2;
-    Step();
-  }
+  // else if (current_step == 1) {
+  //   current_step = current_step + 2;
+  //   Step();
+  // }
   else if (current_step == 3 && document.querySelector('.vinkopties-container.colors .vinkopties-optie[data-name="custom"]').classList.contains('active')) {
     let input_error = false;
     for (var i = 0; i < hex_inputs.length; i++) {
@@ -593,7 +593,7 @@ function PostEmail() {
     }
   }
 
-  let uitstraling = document.querySelector('.step2 .vinkopties-container .vinkopties-optie.active').dataset.name;
+  let branche = document.querySelector('.step2 .vinkopties-container .vinkopties-optie.active').dataset.name;
   kleuren = document.querySelector('.step3 .vinkopties-container .vinkopties-optie.active').dataset.name;
 
   let logo = document.querySelector('.step4 .vinkopties-container .vinkopties-optie.active').dataset.name;
@@ -632,7 +632,7 @@ function PostEmail() {
       break;
   }
 
-  const urlParameters = `demo=true&bedrijfsnaam=${bedrijfsnaam}&heroBg=https://images.unsplash.com/photo-1508873699372-7aeab60b44ab&primaryColor=${primaryColor}&secondaryColor=${secondaryColor}&bedrijfsnaam=${bedrijfsnaam}&logoUrl=${logo}&info%40companyfuel.nl=${email}&uitstraling=${uitstraling}`;
+  const urlParameters = `demo=true&bedrijfsnaam=${bedrijfsnaam}&heroBg=https://images.unsplash.com/photo-1508873699372-7aeab60b44ab&primaryColor=${primaryColor}&secondaryColor=${secondaryColor}&bedrijfsnaam=${bedrijfsnaam}&logoUrl=${logo}&info%40companyfuel.nl=${email}&branche=${branche}`;
 
   const xhr = new XMLHttpRequest();
   xhr.open('POST', '../../save.php');
@@ -656,7 +656,7 @@ function PostEmail() {
   const data = new URLSearchParams();
   data.append('url_parameters', urlParameters);
   data.append('doelen', doelen);
-  data.append('uitstraling', uitstraling);
+  data.append('branche', branche);
   data.append('kleuren', kleuren);
   data.append('step3_custom_secondary', null);
   data.append('step3_option', 'Option 2');

@@ -12,7 +12,21 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="./src/css/style.min.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-88Q51HLPSF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-88Q51HLPSF');
+  </script>
+
   <script src="./src/js/jquery-3.6.3.min.js" charset="utf-8"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +34,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
 
   <!-- demo generation -->
+  <script src="./src/js/demoImagesArray.js"></script>
   <script src="./src/js/getDemo.js"></script>
 
   <title></title>
@@ -75,11 +90,19 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
             </div>
           </div>
 
-          <div class="step step2" data-step="2">
+          <!-- <div class="step step2" data-step="2">
             <div class="instruction-container">
               <h4 class="instruction-subtitel">Design</h4>
               <h2 class="instruction-titel">Kies je stijl</h2>
               <p>Vertel ons over het karakter en de stijl van je bedrijf, zodat we een idee krijgen van de gewenste look & feel.</p>
+            </div>
+          </div> -->
+
+          <div class="step step2" data-step="2">
+            <div class="instruction-container">
+              <h4 class="instruction-subtitel">Structuur</h4>
+              <h2 class="instruction-titel">In welke branche zit je?</h2>
+              <p>Kies de branche waarin je actief bent, staat deze er niet tussen kies dan de optie anders.</p>
             </div>
           </div>
 
@@ -126,13 +149,6 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
             </div>
 
           </div>
-          <!-- <div class="step step8" data-step="8">
-            <div class="instruction-container">
-              <h4 class="instruction-subtitel">Structuur</h4>
-              <h1 class="instruction-titel">In welke branche zit je?</h1>
-              <p>Kies de branche waarin je actief bent, staat deze er niet tussen kies dan de optie anders.</p>
-            </div>
-          </div> -->
 
           <div class="step-buttons-container bottom desktop">
             <div class="step-buttons-previous">Vorige stap</div>
@@ -234,6 +250,58 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
 
           <div class="step step2" data-step="2">
+            <div class="vinkopties-container exclusive single-check">
+
+              <div class="vinkopties-optie active" data-name="advies_consultancy">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Advies en consultancy</h4>
+                </div>
+              </div>
+
+              <div class="vinkopties-optie" data-name="financiele_dienstverlening">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Financiële dienstverlening</h4>
+                </div>
+              </div>
+
+              <div class="vinkopties-optie" data-name="juridische_dienstverlening">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Juridische dienstverlening</h4>
+                </div>
+              </div>
+
+              <div class="vinkopties-optie" data-name="it_dienstverlening">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">IT-dienstverlening</h4>
+                </div>
+              </div>
+
+              <div class="vinkopties-optie" data-name="marketing_communicatie">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Marketing en communicatie</h4>
+                </div>
+              </div>
+
+              <div class="vinkopties-optie" data-name="human_resources">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Human resources (HR)</h4>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+
+
+
+          <!-- <div class="step step2" data-step="2">
             <div class="vinkopties-container exclusive uitstraling">
 
               <div class="vinkopties-optie active" data-name="accountants">
@@ -310,7 +378,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
 
             </div>
-          </div>
+          </div> -->
 
 
 

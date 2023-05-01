@@ -4,9 +4,9 @@ $id = $_GET['id'];
 
 // Connect to the database
 $host = "localhost";
-$user = "root";
-$password = "";
-$database = "demogenerator";
+$user = "deb56708n34_demgen";
+$password = "magicrule1991";
+$database = "deb56708n34_demgen";
 
 $conn = new mysqli($host, $user, $password, $database);
 
