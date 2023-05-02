@@ -46,7 +46,9 @@ function Step() {
   if (directParam != 'true' && current_step == 6) {
     document.querySelector(".step-buttons-previous").style.display = "none";
     document.querySelector(".step-buttons-next").style.display = "none";
-    document.querySelector(".step6 .step-buttons-begin.button.demo-direct").style.display = "none";
+    if (document.querySelector(".step6 .step-buttons-begin.button.demo-direct")){
+      document.querySelector(".step6 .step-buttons-begin.button.demo-direct").style.display = "none";
+    }
 
   }
 
@@ -336,7 +338,7 @@ next_button.addEventListener("click", function () {
     for (var i = 0; i < gegevens_inputs.length; i++) {
 
       //Check if inputs are empty
-      if (isEmpty(gegevens_inputs[i].value)) {
+      if (gegevens_inputs[i].hasAttribute('required') && isEmpty(gegevens_inputs[i].value)) {
         input_error = true;
       }
 
@@ -347,10 +349,10 @@ next_button.addEventListener("click", function () {
       }
 
       //Check if phone is valid
-      if (!ValidatePhoneNumber(document.querySelector('.gegevens-input .telefoon'))) {
-        input_error = true;
-        document.querySelector('.gegevens-input .telefoon').focus();
-      }
+      // if (!ValidatePhoneNumber(document.querySelector('.gegevens-input .telefoon'))) {
+      //   input_error = true;
+      //   document.querySelector('.gegevens-input .telefoon').focus();
+      // }
 
     }
     if (input_error == false) {
@@ -443,7 +445,7 @@ next_button_mobile.addEventListener("click", function () {
     for (var i = 0; i < gegevens_inputs.length; i++) {
 
       //Check if inputs are empty
-      if (isEmpty(gegevens_inputs[i].value)) {
+      if (gegevens_inputs[i].hasAttribute('required') && isEmpty(gegevens_inputs[i].value)) {
         input_error = true;
       }
 
@@ -454,10 +456,10 @@ next_button_mobile.addEventListener("click", function () {
       }
 
       //Check if phone is valid
-      if (!ValidatePhoneNumber(document.querySelector('.gegevens-input .telefoon'))) {
-        input_error = true;
-        document.querySelector('.gegevens-input .telefoon').focus();
-      }
+      // if (!ValidatePhoneNumber(document.querySelector('.gegevens-input .telefoon'))) {
+      //   input_error = true;
+      //   document.querySelector('.gegevens-input .telefoon').focus();
+      // }
 
     }
     if (input_error == false) {
@@ -598,7 +600,6 @@ function PostEmail() {
 
   let logo = document.querySelector('.step4 .vinkopties-container .vinkopties-optie.active').dataset.name;
   (logo == "later") ? logo = "https://www.gmskeleton.nl/wp-content/uploads/2019/12/placeholder.com-logo1.png" : logo = image_url;
-  console.log(image_url);
 
   let voornaam = document.querySelector('.step5 .gegevens-input .voornaam').value;
   let achternaam = document.querySelector('.step5 .gegevens-input .achternaam').value;

@@ -136,7 +136,11 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
               <h2 class="instruction-titel">Demo afspraak</h2>
               <p>Maak via het formulier een afspraak om je persoonlijke demo te bevestigen. Onze expert laat je dan in 20 minuten zien hoe de website jouw online groei faciliteert.</p>
               <div class="step-buttons-container">
-                <div class="step-buttons-begin button demo-direct">Direct genereren</div>
+                <?php if (isset($_GET['direct'])) : ?>
+                  <div class="step-buttons-begin button demo-direct">Direct genereren</div>
+                <?php else : ?>
+                  <div class="step-buttons-begin button maildemo-button">Stuur de demo per e-mail</div>
+                <?php endif; ?>
               </div>
             </div>
           </div>
@@ -519,23 +523,23 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
               <div class="duo-grid">
                 <div class="gegevens-input">
                   <p>Voornaam*</p>
-                  <input class="voornaam" type="text" name="" value="">
+                  <input class="voornaam" type="text" name="" value="" required>
                 </div>
                 <div class="gegevens-input">
                   <p>Achternaam*</p>
-                  <input class="achternaam" type="text" name="" value="">
+                  <input class="achternaam" type="text" name="" value="" required>
                 </div>
               </div>
               <div class="gegevens-input">
                 <p>Bedrijfsnaam*</p>
-                <input class="bedrijfsnaam" type="text" name="" value="">
+                <input class="bedrijfsnaam" type="text" name="" value="" required>
               </div>
               <div class="gegevens-input">
                 <p>E-mail*</p>
-                <input class="email" type="text" name="" value="">
+                <input class="email" type="text" name="" value="" required>
               </div>
               <div class="gegevens-input">
-                <p>Telefoon*</p>
+                <p>Telefoon</p>
                 <input class="telefoon" type="text" name="" value="">
               </div>
             </div>
@@ -553,9 +557,6 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
                 <div class="calendly-inline-widget" data-url="https://calendly.com/company-fuel/plan-website-demo?hide_event_type_details=1&hide_gdpr_banner=1&text_color=14223b&primary_color=2d1eed" style="min-width:320px;height:750px;"></div>
                 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
                 <!-- Calendly inline widget end -->
-              </div>
-              <div class="maildemo-container">
-                <div class="maildemo-button">Stuur de demo per e-mail</div>
               </div>
             </div>
           </div>
