@@ -12,7 +12,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="./src/css/style.min.css">
   <script src="./src/js/jquery-3.6.3.min.js" charset="utf-8"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -156,11 +156,11 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
     <div class="inputform-col right">
       <div class="inputform-inner-col right">
 
-        <div class="step-container-right">
+        <div class="step-container-right ">
 
           <div class="step-buttons-error-message">Kies tenminste één optie om door te gaan</div>
 
-          <div class="step step0" data-step="0">
+          <div class="step step0 step-container-align-center" data-step="0">
             <div class="video-container">
               <video src="./src/img/Demogenerator - Animatie Testttt.webm" autoplay muted loop></video>
             </div>
@@ -450,25 +450,25 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
             <div class="gegevens-container">
               <div class="duo-grid">
                 <div class="gegevens-input">
-                  <p>Voornaam*</p>
-                  <input class="voornaam" type="text" name="" value="">
+                  <p>Voornaam *</p>
+                  <input placeholder="Voornaam *" class="voornaam" type="text" name="" value="">
                 </div>
                 <div class="gegevens-input">
-                  <p>Achternaam*</p>
-                  <input class="achternaam" type="text" name="" value="">
+                  <p>Achternaam *</p>
+                  <input placeholder="Achternaam *" class="achternaam" type="text" name="" value="">
                 </div>
               </div>
               <div class="gegevens-input">
-                <p>Bedrijfsnaam*</p>
-                <input class="bedrijfsnaam" type="text" name="" value="">
+                <p>Bedrijfsnaam *</p>
+                <input placeholder="Bedrijfsnaam *" class="bedrijfsnaam" type="text" name="" value="">
               </div>
               <div class="gegevens-input">
-                <p>E-mail*</p>
-                <input class="email" type="text" name="" value="">
+                <p>E-mail *</p>
+                <input placeholder="E-mail *" class="email" type="text" name="" value="">
               </div>
               <div class="gegevens-input">
-                <p>Telefoon*</p>
-                <input class="telefoon" type="text" name="" value="">
+                <p>Telefoon *</p>
+                <input placeholder="Telefoon *" class="telefoon" type="text" name="" value="">
               </div>
             </div>
           </div>
