@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            let uitstraling = document.querySelector('.step2 .vinkopties-container .vinkopties-optie.active').dataset.name;
+            let branche = document.querySelector('.step2 .vinkopties-container .vinkopties-optie.active').dataset.name;
             kleuren = document.querySelector('.step3 .vinkopties-container .vinkopties-optie.active').dataset.name;
 
             let logo = document.querySelector('.step4 .vinkopties-container .vinkopties-optie.active').dataset.name;
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     break;
             }
 
-            const urlParameters = `demo=true&bedrijfsnaam=${bedrijfsnaam}&heroBg=https://images.unsplash.com/photo-1508873699372-7aeab60b44ab&primaryColor=${primaryColor}&secondaryColor=${secondaryColor}&bedrijfsnaam=${bedrijfsnaam}&logoUrl=${logo}&info%40companyfuel.nl=${email}&uitstraling=${uitstraling}`;
+            const urlParameters = `demo=true&bedrijfsnaam=${bedrijfsnaam}&primaryColor=${primaryColor}&secondaryColor=${secondaryColor}&bedrijfsnaam=${bedrijfsnaam}&logoUrl=${logo}&info%40companyfuel.nl=${email}&branche=${branche}`;
 
 
             demoFrame.src = "https://skelter.cfdemo4.nl/demo/?" + urlParameters;
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const data = new URLSearchParams();
             data.append('url_parameters', urlParameters);
             data.append('doelen', doelen);
-            data.append('uitstraling', uitstraling);
+            data.append('branche', branche);
             data.append('kleuren', kleuren);
             data.append('step3_custom_secondary', null);
             data.append('step3_option', 'Option 2');

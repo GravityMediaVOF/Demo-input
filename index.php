@@ -13,6 +13,20 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
   <meta name="googlebot" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./src/css/style.min.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-88Q51HLPSF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-88Q51HLPSF');
+  </script>
+
   <script src="./src/js/jquery-3.6.3.min.js" charset="utf-8"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +34,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
 
   <!-- demo generation -->
+  <script src="./src/js/demoImagesArray.js"></script>
   <script src="./src/js/getDemo.js"></script>
 
   <title></title>
@@ -75,11 +90,19 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
             </div>
           </div>
 
-          <div class="step step2" data-step="2">
+          <!-- <div class="step step2" data-step="2">
             <div class="instruction-container">
               <h4 class="instruction-subtitel">Design</h4>
               <h2 class="instruction-titel">Kies je stijl</h2>
               <p>Vertel ons over het karakter en de stijl van je bedrijf, zodat we een idee krijgen van de gewenste look & feel.</p>
+            </div>
+          </div> -->
+
+          <div class="step step2" data-step="2">
+            <div class="instruction-container">
+              <h4 class="instruction-subtitel">Structuur</h4>
+              <h2 class="instruction-titel">In welke branche zit je?</h2>
+              <p>Kies de branche waarin je actief bent, staat deze er niet tussen kies dan de optie anders.</p>
             </div>
           </div>
 
@@ -113,7 +136,11 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
               <h2 class="instruction-titel">Demo afspraak</h2>
               <p>Maak via het formulier een afspraak om je persoonlijke demo te bevestigen. Onze expert laat je dan in 20 minuten zien hoe de website jouw online groei faciliteert.</p>
               <div class="step-buttons-container">
-                <div class="step-buttons-begin button demo-direct">Direct genereren</div>
+                <?php if (isset($_GET['direct'])) : ?>
+                  <div class="step-buttons-begin button demo-direct">Direct genereren</div>
+                <?php else : ?>
+                  <div class="step-buttons-begin button maildemo-button">Stuur de demo per e-mail</div>
+                <?php endif; ?>
               </div>
             </div>
           </div>
@@ -126,13 +153,6 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
             </div>
 
           </div>
-          <!-- <div class="step step8" data-step="8">
-            <div class="instruction-container">
-              <h4 class="instruction-subtitel">Structuur</h4>
-              <h1 class="instruction-titel">In welke branche zit je?</h1>
-              <p>Kies de branche waarin je actief bent, staat deze er niet tussen kies dan de optie anders.</p>
-            </div>
-          </div> -->
 
           <div class="step-buttons-container bottom desktop">
             <div class="step-buttons-previous">Vorige stap</div>
@@ -234,6 +254,58 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
 
           <div class="step step2" data-step="2">
+            <div class="vinkopties-container exclusive single-check">
+
+              <div class="vinkopties-optie active" data-name="advies_consultancy">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Advies en consultancy</h4>
+                </div>
+              </div>
+
+              <div class="vinkopties-optie" data-name="financiele_dienstverlening">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Financiële dienstverlening</h4>
+                </div>
+              </div>
+
+              <div class="vinkopties-optie" data-name="juridische_dienstverlening">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Juridische dienstverlening</h4>
+                </div>
+              </div>
+
+              <div class="vinkopties-optie" data-name="it_dienstverlening">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">IT-dienstverlening</h4>
+                </div>
+              </div>
+
+              <div class="vinkopties-optie" data-name="marketing_communicatie">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Marketing en communicatie</h4>
+                </div>
+              </div>
+
+              <div class="vinkopties-optie" data-name="human_resources">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Human resources (HR)</h4>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+
+
+
+          <!-- <div class="step step2" data-step="2">
             <div class="vinkopties-container exclusive uitstraling">
 
               <div class="vinkopties-optie active" data-name="accountants">
@@ -310,7 +382,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
 
             </div>
-          </div>
+          </div> -->
 
 
 
@@ -450,25 +522,25 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
             <div class="gegevens-container">
               <div class="duo-grid">
                 <div class="gegevens-input">
-                  <p>Voornaam *</p>
-                  <input placeholder="Voornaam *" class="voornaam" type="text" name="" value="">
+                  <p>Voornaam*</p>
+                  <input class="voornaam" type="text" name="" value="" required>
                 </div>
                 <div class="gegevens-input">
-                  <p>Achternaam *</p>
-                  <input placeholder="Achternaam *" class="achternaam" type="text" name="" value="">
+                  <p>Achternaam*</p>
+                  <input class="achternaam" type="text" name="" value="" required>
                 </div>
               </div>
               <div class="gegevens-input">
-                <p>Bedrijfsnaam *</p>
-                <input placeholder="Bedrijfsnaam *" class="bedrijfsnaam" type="text" name="" value="">
+                <p>Bedrijfsnaam*</p>
+                <input class="bedrijfsnaam" type="text" name="" value="" required>
               </div>
               <div class="gegevens-input">
-                <p>E-mail *</p>
-                <input placeholder="E-mail *" class="email" type="text" name="" value="">
+                <p>E-mail*</p>
+                <input class="email" type="text" name="" value="" required>
               </div>
               <div class="gegevens-input">
-                <p>Telefoon *</p>
-                <input placeholder="Telefoon *" class="telefoon" type="text" name="" value="">
+                <p>Telefoon</p>
+                <input class="telefoon" type="text" name="" value="">
               </div>
             </div>
           </div>
@@ -485,9 +557,6 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
                 <div class="calendly-inline-widget" data-url="https://calendly.com/company-fuel/plan-website-demo?hide_event_type_details=1&hide_gdpr_banner=1&text_color=14223b&primary_color=2d1eed" style="min-width:320px;height:750px;"></div>
                 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
                 <!-- Calendly inline widget end -->
-              </div>
-              <div class="maildemo-container">
-                <div class="maildemo-button">Stuur de demo per e-mail</div>
               </div>
             </div>
           </div>
