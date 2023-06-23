@@ -13,6 +13,11 @@ body {
     overflow-x: hidden;
 }
 
+.top_bar_menu .top_container .menu_options .style_switch {
+  height: 52px;
+  border: 2px solid #e4e3e3;
+}
+
 .loading-screen {
     position: absolute;
     left: 0;
@@ -379,8 +384,6 @@ body {
     padding-bottom: 100px;
     padding-top: 70px;
     position: relative;
-
-
 }
 
 
@@ -408,13 +411,7 @@ h1.instruction-titel {
     margin-bottom: 30px;
 }
 
-.step {
-    &.step-container-align-center {
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-    }
-}
+
 
 
 
@@ -478,6 +475,7 @@ h1.instruction-titel {
 
 
 .video-container {
+    margin-right: 80px;
     background-color: $background;
     position: relative;
     border-radius: 5px;
@@ -486,7 +484,7 @@ h1.instruction-titel {
 .video-container video {
     width: calc(100% - 100px);
     border-radius: 5px;
-    padding: 0 50px;
+    padding: 50px;
     mix-blend-mode: multiply;
 }
 
@@ -793,10 +791,9 @@ h1.instruction-titel {
 .logo-upload-upload {}
 
 .drop-zone {
-    &:not([style]) {
+    &:not([style]){
         min-height: 50px;
     }
-
     max-height: 500px;
     padding: 25px;
     display: flex;
@@ -905,7 +902,7 @@ h1.instruction-titel {
     border-radius: 5px;
     border: 2px solid $border;
     background-color: $white;
-    font-size: 16px;
+    font-size: 20px;
     padding: 15px;
 }
 
@@ -1008,8 +1005,6 @@ h1.instruction-titel {
     .step-container-right {
         padding-top: 30px;
         padding-bottom: 0px;
-
-
     }
 
     .step-buttons-container.mobile {

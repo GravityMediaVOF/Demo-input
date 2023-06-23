@@ -411,18 +411,6 @@ h1.instruction-titel {
   margin-bottom: 30px;
 }
 
-.step.step-container-align-center {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .step-buttons-container {
   display: flex;
   justify-content: space-between;
@@ -485,6 +473,7 @@ h1.instruction-titel {
 }
 
 .video-container {
+  margin-right: 80px;
   background-color: #F3F4F5;
   position: relative;
   border-radius: 5px;
@@ -493,7 +482,7 @@ h1.instruction-titel {
 .video-container video {
   width: calc(100% - 100px);
   border-radius: 5px;
-  padding: 0 50px;
+  padding: 50px;
   mix-blend-mode: multiply;
 }
 
@@ -872,7 +861,7 @@ h1.instruction-titel {
   border-radius: 5px;
   border: 2px solid #e4e3e3;
   background-color: #ffffff;
-  font-size: 16px;
+  font-size: 20px;
   padding: 15px;
 }
 
@@ -1117,6 +1106,8 @@ input {
   box-sizing: border-box;
   cursor: pointer;
 }
+
+
 .top_bar_menu .top_container .menu_options ul li.active {
   background: #14223b;
   border: 2px solid #14223b;

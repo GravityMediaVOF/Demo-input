@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     demoDirectElements.forEach((demoDirect) => {
         demoDirect.addEventListener('click', (event) => {
-            let vinkopties = document.querySelectorAll('.step1 .vinkopties-container .vinkopties-optie');
+            let vinkopties = document.querySelectorAll('.step0 .vinkopties-container .vinkopties-optie');
             let doelen = null;
             for (var i = 0; i < vinkopties.length; i++) {
                 if (vinkopties[i].classList.contains("active")) {
@@ -32,7 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            let branche = document.querySelector('.step2 .vinkopties-container .vinkopties-optie.active').dataset.name;
+            let branche = document.querySelector('.step1 .vinkopties-container .vinkopties-optie.active').dataset.name;
+            let stijl = document.querySelector('.step2 .vinkopties-container .vinkopties-optie.active').dataset.name;
             kleuren = document.querySelector('.step3 .vinkopties-container .vinkopties-optie.active').dataset.name;
 
             let logo = document.querySelector('.step4 .vinkopties-container .vinkopties-optie.active').dataset.name;
@@ -71,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     break;
             }
 
-            const urlParameters = `demo=true&bedrijfsnaam=${bedrijfsnaam}&primaryColor=${primaryColor}&secondaryColor=${secondaryColor}&bedrijfsnaam=${bedrijfsnaam}&logoUrl=${logo}&info%40companyfuel.nl=${email}&branche=${branche}`;
+            const urlParameters = `demo=true&bedrijfsnaam=${bedrijfsnaam}&primaryColor=${primaryColor}&secondaryColor=${secondaryColor}&bedrijfsnaam=${bedrijfsnaam}&logoUrl=${logo}&info%40companyfuel.nl=${email}&branche=${branche}&style=${stijl}`;
 
 
             demoFrame.src = "https://skelter.cfdemo4.nl/demo/?" + urlParameters;
@@ -103,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
             data.append('url_parameters', urlParameters);
             data.append('doelen', doelen);
             data.append('branche', branche);
+            data.append('stijl', stijl);
             data.append('kleuren', kleuren);
             data.append('step3_custom_secondary', null);
             data.append('step3_option', 'Option 2');

@@ -12,6 +12,9 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-Equiv="Cache-Control" Content="no-cache" />
+  <meta http-Equiv="Pragma" Content="no-cache" />
+  <meta http-Equiv="Expires" Content="0" />
   <link rel="stylesheet" href="./src/css/style.min.css">
 
   <!-- Google tag (gtag.js) -->
@@ -34,8 +37,8 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
 
   <!-- demo generation -->
-  <script src="./src/js/demoImagesArray.js"></script>
-  <script src="./src/js/getDemo.js"></script>
+  <script data-cfasync="false" src="./src/js/demoImagesArray.js"></script>
+  <script data-cfasync="false" src="./src/js/getDemo.js"></script>
 
   <title></title>
 </head>
@@ -48,6 +51,11 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
         <img class="logo" src="./src/img/cf-logo-dark.svg" alt="">
       </a>
       <div class="menu_options">
+        <select class="style_switch" name="" style="display: none;">
+          <option value="style1">Stijl 1</option>
+          <option value="style2">Stijl 2</option>
+          <option value="style3">Stijl 3</option>
+        </select>
         <ul>
           <li class="desktop_active active"><i class="icon">web_asset</i></li>
           <li class="mobile_active"><i class="icon">phone_iphone</i></li>
@@ -72,7 +80,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
         <div class="step-container-left">
 
-          <div class="step step0" data-step="0">
+          <div class="step step-1" data-step="-1">
             <div class="instruction-container">
               <h1 class="instruction-titel">Claim je demo</h1>
               <p>Vraag een professionele website demo aan, en zie hoe jouw ideale website eruit ziet, en hoe deze je faciliteert in jouw doelstellingen.</p>
@@ -82,7 +90,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
             </div>
           </div>
 
-          <div class="step step1" data-step="1">
+          <div class="step step0" data-step="0">
             <div class="instruction-container">
               <h4 class="instruction-subtitel">Doelstellingen</h4>
               <h2 class="instruction-titel">Wat zijn je doelen?</h2>
@@ -90,19 +98,19 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
             </div>
           </div>
 
-          <!-- <div class="step step2" data-step="2">
-            <div class="instruction-container">
-              <h4 class="instruction-subtitel">Design</h4>
-              <h2 class="instruction-titel">Kies je stijl</h2>
-              <p>Vertel ons over het karakter en de stijl van je bedrijf, zodat we een idee krijgen van de gewenste look & feel.</p>
-            </div>
-          </div> -->
-
-          <div class="step step2" data-step="2">
+          <div class="step step1" data-step="1">
             <div class="instruction-container">
               <h4 class="instruction-subtitel">Structuur</h4>
               <h2 class="instruction-titel">In welke branche zit je?</h2>
               <p>Kies de branche waarin je actief bent, staat deze er niet tussen kies dan de optie anders.</p>
+            </div>
+          </div>
+
+          <div class="step step2" data-step="2">
+            <div class="instruction-container">
+              <h4 class="instruction-subtitel">Design</h4>
+              <h2 class="instruction-titel">Kies je stijl</h2>
+              <p>Vertel ons over het karakter en de stijl van je bedrijf, zodat we een idee krijgen van de gewenste look & feel.</p>
             </div>
           </div>
 
@@ -135,13 +143,11 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
               <h4 class="instruction-subtitel">Advies</h4>
               <h2 class="instruction-titel">Demo afspraak</h2>
               <p>Maak via het formulier een afspraak om je persoonlijke demo te bevestigen. Onze expert laat je dan in 20 minuten zien hoe de website jouw online groei faciliteert.</p>
-              <div class="step-buttons-container">
-                <?php if (isset($_GET['direct'])) : ?>
-                  <div class="step-buttons-begin button demo-direct">Direct genereren</div>
-                <?php else : ?>
-                  <div class="step-buttons-begin button maildemo-button">Stuur de demo per e-mail</div>
-                <?php endif; ?>
-              </div>
+              <?php if (isset($_GET['direct'])) : ?>
+                <div class="step-buttons-begin button demo-direct">Direct genereren</div>
+              <?php else : ?>
+                <div class="step-buttons-begin button maildemo-button">Stuur de demo per e-mail</div>
+              <?php endif; ?>
             </div>
           </div>
 
@@ -176,11 +182,11 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
     <div class="inputform-col right">
       <div class="inputform-inner-col right">
 
-        <div class="step-container-right ">
+        <div class="step-container-right">
 
           <div class="step-buttons-error-message">Kies tenminste één optie om door te gaan</div>
 
-          <div class="step step0 step-container-align-center" data-step="0">
+          <div class="step step-1" data-step="-1">
             <div class="video-container">
               <video src="./src/img/Demogenerator - Animatie Testttt.webm" autoplay muted loop></video>
             </div>
@@ -192,7 +198,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
 
 
-          <div class="step step1" data-step="1">
+          <div class="step step0" data-step="0">
             <div class="vinkopties-container">
 
               <div class="vinkopties-optie" data-name="leads_genereren">
@@ -253,7 +259,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
 
 
-          <div class="step step2" data-step="2">
+          <div class="step step1" data-step="1">
             <div class="vinkopties-container exclusive single-check">
 
               <div class="vinkopties-optie active" data-name="advies_consultancy">
@@ -305,84 +311,47 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
 
 
-          <!-- <div class="step step2" data-step="2">
+          <div class="step step2" data-step="2">
             <div class="vinkopties-container exclusive uitstraling">
 
-              <div class="vinkopties-optie active" data-name="accountants">
+              <div class="vinkopties-optie active" data-name="style1">
                 <div class="vinkopties-vink"></div>
                 <div class="vinkopties-text">
                   <h4 class="vinkopties-subtitel">Fris</h4>
-                  <p class="vinkopties-p">Licht & luchtig, moderne uitstraling.</p>
+                  <p class="vinkopties-p">Minimalistisch en gestroomlijnd ontwerp.</p>
                 </div>
                 <div class="vinkopties-img">
-                  <img src="./src/img/Demo portfolio_Laptop & Mobile_Accountants.webp" alt="">
+                  <img src="./src/img/style1-home.webp" alt="">
                   <div class="img-magnifying"></div>
                 </div>
               </div>
 
-              <div class="vinkopties-optie" data-name="advocaten">
+              <div class="vinkopties-optie" data-name="style2">
                 <div class="vinkopties-vink"></div>
                 <div class="vinkopties-text">
                   <h4 class="vinkopties-subtitel">Statig</h4>
-                  <p class="vinkopties-p">Formeel & traditioneel, klassieke uitstraling.</p>
+                  <p class="vinkopties-p">Simpel & strak, schreeuwerige uitstraling.</p>
                 </div>
                 <div class="vinkopties-img">
-                  <img src="./src/img/Demo portfolio_Laptop & Mobile_Advocaten.webp" alt="">
+                  <img src="./src/img/style2-home.webp" alt="">
                   <div class="img-magnifying"></div>
                 </div>
               </div>
 
-              <div class="vinkopties-optie" data-name="it-dienstverleners">
+              <div class="vinkopties-optie" data-name="style3">
                 <div class="vinkopties-vink"></div>
                 <div class="vinkopties-text">
                   <h4 class="vinkopties-subtitel">Innovatief</h4>
                   <p class="vinkopties-p">Vernieuwend & vooruitstrevend, moderne uitstraling.</p>
                 </div>
                 <div class="vinkopties-img">
-                  <img src="./src/img/Demo portfolio_Laptop & Mobile_IT.webp" alt="">
+                  <img src="./src/img/style3-home.webp" alt="">
                   <div class="img-magnifying"></div>
                 </div>
               </div>
-
-              <div class="vinkopties-optie" data-name="management-consultants">
-                <div class="vinkopties-vink"></div>
-                <div class="vinkopties-text">
-                  <h4 class="vinkopties-subtitel">Modern</h4>
-                  <p class="vinkopties-p">Simpel & strak, minimalistische uitstraling.</p>
-                </div>
-                <div class="vinkopties-img">
-                  <img src="./src/img/Demo portfolio_Laptop & Mobile_Management.webp" alt="">
-                  <div class="img-magnifying"></div>
-                </div>
-              </div>
-
-              <div class="vinkopties-optie" data-name="recruitment-agencies">
-                <div class="vinkopties-vink"></div>
-                <div class="vinkopties-text">
-                  <h4 class="vinkopties-subtitel">Strak</h4>
-                  <p class="vinkopties-p">Minimalistisch en gestroomlijnd ontwerp</p>
-                </div>
-                <div class="vinkopties-img">
-                  <img src="./src/img/Demo portfolio_Laptop & Mobile_reqruitment.webp" alt="">
-                  <div class="img-magnifying"></div>
-                </div>
-              </div>
-
-              <div class="vinkopties-optie" data-name="creatief">
-                <div class="vinkopties-vink"></div>
-                <div class="vinkopties-text">
-                  <h4 class="vinkopties-subtitel">Creatief</h4>
-                  <p class="vinkopties-p">Expressief & inventief, artistieke uitstraling.</p>
-                </div>
-                <div class="vinkopties-img">
-                  <img src="./src/img/Demo portfolio_Laptop & Mobile_Creatief.webp" alt="">
-                  <div class="img-magnifying"></div>
-                </div>
-              </div>
-
 
             </div>
-          </div> -->
+          </div>
 
 
 
@@ -646,19 +615,19 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
         <div class="modal-content-left">
 
 
-          <div class="stijl" data-style="accountants">
+          <div class="stijl" data-style="style1">
             <div class="modal-main-image">
-              <img src="./src/img/Demo portfolio_Laptop & Mobile_Accountants.webp" alt="">
+              <img src="./src/img/style1-home.webp" alt="">
             </div>
             <div class="modal-gallery-container">
               <div class="modal-gallery-thumbnail active">
-                <img src="./src/img/Demo portfolio_Laptop & Mobile_Accountants.webp" alt="">
+                <img src="./src/img/style1-home.webp" alt="">
               </div>
               <div class="modal-gallery-thumbnail">
-                <img src="./src/img/Demo portfolio_Laptop_Accountants 1.webp" alt="">
+                <img src="./src/img/style1-element.webp" alt="">
               </div>
               <div class="modal-gallery-thumbnail">
-                <img src="./src/img/Demo portfolio_Laptop_Accountants 2.webp" alt="">
+                <img src="./src/img/style1-footer.webp" alt="">
               </div>
             </div>
           </div>
@@ -667,16 +636,19 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
 
 
-          <div class="stijl" data-style="advocaten">
+          <div class="stijl" data-style="style2">
             <div class="modal-main-image">
-              <img src="./src/img/Demo portfolio_Laptop & Mobile_Advocaten.webp" alt="">
+              <img src="./src/img/style2-home.webp" alt="">
             </div>
             <div class="modal-gallery-container">
               <div class="modal-gallery-thumbnail active">
-                <img src="./src/img/Demo portfolio_Laptop & Mobile_Advocaten.webp" alt="">
+                <img src="./src/img/style2-home.webp" alt="">
               </div>
               <div class="modal-gallery-thumbnail">
-                <img src="./src/img/Demo portfolio_Laptop_Advocaten.webp" alt="">
+                <img src="./src/img/style2-element.webp" alt="">
+              </div>
+              <div class="modal-gallery-thumbnail">
+                <img src="./src/img/style2-footer.webp" alt="">
               </div>
             </div>
           </div>
@@ -685,88 +657,22 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
 
 
-          <div class="stijl" data-style="it-dienstverleners">
+          <div class="stijl" data-style="style3">
             <div class="modal-main-image">
-              <img src="./src/img/Demo portfolio_Laptop & Mobile_IT.webp" alt="">
+              <img src="./src/img/style3-home.webp" alt="">
             </div>
             <div class="modal-gallery-container">
               <div class="modal-gallery-thumbnail active">
-                <img src="./src/img/Demo portfolio_Laptop & Mobile_IT.webp" alt="">
+                <img src="./src/img/style3-home.webp" alt="">
               </div>
               <div class="modal-gallery-thumbnail">
-                <img src="./src/img/Demo portfolio_Laptop_IT.webp" alt="">
+                <img src="./src/img/style3-element.webp" alt="">
               </div>
               <div class="modal-gallery-thumbnail">
-                <img src="./src/img/Demo portfolio_Laptop_IT 2.webp" alt="">
+                <img src="./src/img/style3-footer.webp" alt="">
               </div>
             </div>
           </div>
-
-
-
-
-
-
-          <div class="stijl" data-style="management-consultants">
-            <div class="modal-main-image">
-              <img src="./src/img/Demo portfolio_Laptop & Mobile_Management.webp" alt="">
-            </div>
-            <div class="modal-gallery-container">
-              <div class="modal-gallery-thumbnail active">
-                <img src="./src/img/Demo portfolio_Laptop & Mobile_Management.webp" alt="">
-              </div>
-              <div class="modal-gallery-thumbnail">
-                <img src="./src/img/Demo portfolio_Laptop_Management.webp" alt="">
-              </div>
-              <div class="modal-gallery-thumbnail">
-                <img src="./src/img/Demo portfolio_Laptop_Management 2.webp" alt="">
-              </div>
-            </div>
-          </div>
-
-
-
-
-
-
-
-          <div class="stijl" data-style="recruitment-agencies">
-            <div class="modal-main-image">
-              <img src="./src/img/Demo portfolio_Laptop & Mobile_reqruitment.webp" alt="">
-            </div>
-            <div class="modal-gallery-container">
-              <div class="modal-gallery-thumbnail active">
-                <img src="./src/img/Demo portfolio_Laptop & Mobile_reqruitment.webp" alt="">
-              </div>
-              <div class="modal-gallery-thumbnail">
-                <img src="./src/img/Demo portfolio_Laptop_reqruitment 1.webp" alt="">
-              </div>
-            </div>
-          </div>
-
-
-
-
-
-
-
-          <div class="stijl" data-style="creatief">
-            <div class="modal-main-image">
-              <img src="./src/img/Demo portfolio_Laptop & Mobile_Creatief.webp" alt="">
-            </div>
-            <div class="modal-gallery-container">
-              <div class="modal-gallery-thumbnail active">
-                <img src="./src/img/Demo portfolio_Laptop & Mobile_Creatief.webp" alt="">
-              </div>
-              <div class="modal-gallery-thumbnail">
-                <img src="./src/img/Demo portfolio_Laptop_Creatief 1.webp" alt="">
-              </div>
-              <div class="modal-gallery-thumbnail">
-                <img src="./src/img/Demo portfolio_Laptop_Creatief 2.webp" alt="">
-              </div>
-            </div>
-          </div>
-
 
 
         </div>
@@ -775,7 +681,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
 
 
-          <div class="stijl" data-style="accountants">
+          <div class="stijl" data-style="style1">
             <h1 class="modal-titel">Fris</h1>
             <p>Deze stijl is modern en rustig met blauwe tinten, en biedt de volgende voordelen:</p>
             <div class="modal-bullet-list">
@@ -797,9 +703,9 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
 
 
-          <div class="stijl" data-style="advocaten">
-            <h1 class="modal-titel">Statig</h1>
-            <p>Deze stijl heeft een statige en schreeuwerige uitstraling met voornamelijk goude tinten, en biedt de volgende voordelen:</p>
+          <div class="stijl" data-style="style2">
+            <h1 class="modal-titel">Opvallend</h1>
+            <p>Deze stijl heeft een statige en schreeuwerige uitstraling met voornamelijk rode en zwarte tinten, en biedt de volgende voordelen:</p>
             <div class="modal-bullet-list">
               <div class="bullet-point">
                 <div class="bullet"></div>
@@ -819,9 +725,9 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
 
 
-          <div class="stijl" data-style="it-dienstverleners">
+          <div class="stijl" data-style="style3">
             <h1 class="modal-titel">Innovatief</h1>
-            <p>Deze stijl heeft een moderne en speelse uitstraling met voornamelijk blauwe en paarse tinten, en biedt de volgende voordelen:</p>
+            <p>Deze stijl heeft een moderne en speelse uitstraling met hoofdzakelijk paarse en groene tinten, en biedt de volgende voordelen:</p>
             <div class="modal-bullet-list">
               <div class="bullet-point">
                 <div class="bullet"></div>
@@ -829,85 +735,22 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
               </div>
               <div class="bullet-point">
                 <div class="bullet"></div>
-                <p>Focus op innovatie & technologie</p>
+                <p>Focus op innovatie</p>
               </div>
               <div class="bullet-point">
                 <div class="bullet"></div>
-                <p>Vooruitgang & vooruitstrevendheid.</p>
+                <p>Vooruitgang & vooruitstrevendheid</p>
               </div>
             </div>
             <div class="button choose-style">Deze stijl kiezen</div>
           </div>
 
-
-
-          <div class="stijl" data-style="management-consultants">
-            <h1 class="modal-titel">Modern</h1>
-            <p>Deze stijl heeft een moderne en speelse uitstraling met voornamelijk rode tinten, en biedt de volgende voordelen:</p>
-            <div class="modal-bullet-list">
-              <div class="bullet-point">
-                <div class="bullet"></div>
-                <p>Neutrale kleuren & vormen</p>
-              </div>
-              <div class="bullet-point">
-                <div class="bullet"></div>
-                <p>Nadruk op functionaliteit</p>
-              </div>
-              <div class="bullet-point">
-                <div class="bullet"></div>
-                <p>Schone, strakke lijnen</p>
-              </div>
-            </div>
-            <div class="button choose-style">Deze stijl kiezen</div>
-          </div>
-
-
-          <div class="stijl" data-style="recruitment-agencies">
-            <h1 class="modal-titel">Strak</h1>
-            <p>Deze stijl heeft een moderne en rustige uitstraling met voornamelijk blauwe tinten, en biedt de volgende voordelen:</p>
-            <div class="modal-bullet-list">
-              <div class="bullet-point">
-                <div class="bullet"></div>
-                <p>Gebruik van scherpe lijnen en geometrische vormen</p>
-              </div>
-              <div class="bullet-point">
-                <div class="bullet"></div>
-                <p>Focus op functionaliteit en efficiëntie</p>
-              </div>
-              <div class="bullet-point">
-                <div class="bullet"></div>
-                <p>Strakke en georganiseerde uitstraling</p>
-              </div>
-            </div>
-            <div class="button choose-style">Deze stijl kiezen</div>
-          </div>
-
-
-          <div class="stijl" data-style="creatief">
-            <h1 class="modal-titel">Creatief</h1>
-            <p>Deze stijl maakt gebruik van alternatieve vormen, hoofdzakelijk illustraties, en biedt de volgende voordelen:</p>
-            <div class="modal-bullet-list">
-              <div class="bullet-point">
-                <div class="bullet"></div>
-                <p>Speelse kleuren, ongebruikelijke typografie & illustraties</p>
-              </div>
-              <div class="bullet-point">
-                <div class="bullet"></div>
-                <p>Artistieke, fantasierijke uitstraling</p>
-              </div>
-              <div class="bullet-point">
-                <div class="bullet"></div>
-                <p>Authenticiteit & creativiteit</p>
-              </div>
-            </div>
-            <div class="button choose-style">Deze stijl kiezen</div>
-          </div>
         </div>
       </div>
     </div>
   </div>
 
 </body>
-<script src="./src/js/main.js" charset="utf-8"></script>
+<script data-cfasync="false" src="./src/js/main.js" charset="utf-8"></script>
 
 </html>
