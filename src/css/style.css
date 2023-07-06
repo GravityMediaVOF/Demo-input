@@ -63,6 +63,11 @@ body {
   overflow-x: hidden;
 }
 
+.top_bar_menu .top_container .menu_options .style_switch {
+  height: 52px;
+  border: 2px solid #e4e3e3;
+}
+
 .loading-screen {
   position: absolute;
   left: 0;
@@ -72,8 +77,18 @@ body {
   background-color: #FEFEFE;
   z-index: 999999;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.loading-screen p {
+  display: none;
+  margin-top: 25px;
+  font-family: "Poppins", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #89909d;
 }
 
 .loader {
@@ -117,8 +132,7 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  -webkit-backdrop-filter: brightness(0.85) blur(10px);
-          backdrop-filter: brightness(0.85) blur(10px);
+  backdrop-filter: brightness(0.85) blur(10px);
   background-color: rgba(255, 255, 255, 0.4);
 }
 
@@ -188,11 +202,11 @@ body {
   font-size: 1.3rem;
   color: #2ecc71;
   font-weight: 600;
+  -webkit-transition: all ease-out 0.1s;
   transition: all ease-out 0.1s;
 }
 
 .modal-content-right .button {
-  width: -moz-fit-content;
   width: fit-content;
   margin-top: 30px;
 }
@@ -225,7 +239,6 @@ body {
 
 .modal-gallery-thumbnail img {
   width: 100%;
-  height: -moz-fit-content;
   height: fit-content;
 }
 
@@ -247,6 +260,7 @@ body {
   font-family: "Material Symbols Outlined";
   font-size: 2.3rem;
   color: #14223b;
+  -webkit-transition: all ease-out 0.1s;
   transition: all ease-out 0.1s;
 }
 
@@ -426,9 +440,7 @@ h1.instruction-titel {
   color: #89909d;
   padding: 18px 0px;
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .step-buttons-previous:hover,
@@ -439,9 +451,7 @@ h1.instruction-titel {
 .step-buttons-next,
 .step-buttons-next-mobile {
   display: inline-flex;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .step-buttons-next::after,
@@ -453,14 +463,13 @@ h1.instruction-titel {
   font-size: 1.25rem;
   color: inherit;
   margin: 0 0 0 10px;
+  -webkit-transition: all ease-out 0.1s;
   transition: all ease-out 0.1s;
 }
 
 .step-buttons-begin {
   display: inline-flex;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   margin-top: 30px;
 }
 
@@ -500,6 +509,7 @@ h1.instruction-titel {
   border-radius: 5px;
   border: 2px solid #e4e3e3;
   cursor: pointer;
+  -webkit-transition: all ease-out 0.1s;
   transition: all ease-out 0.1s;
 }
 
@@ -524,6 +534,7 @@ h1.instruction-titel {
 .vinkopties-optie.active .vinkopties-vink {
   border: 2px solid #ff623e;
   background-color: #ff623e;
+  -webkit-transition: all ease-out 0.1s;
   transition: all ease-out 0.1s;
 }
 
@@ -537,15 +548,14 @@ h1.instruction-titel {
   font-size: 1.6rem;
   font-weight: 600;
   color: #ffffff;
+  -webkit-transition: all ease-out 0.1s;
   transition: all ease-out 0.1s;
 }
 
 .vinkopties-text {
   display: flex;
   flex-direction: column;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   justify-content: center;
 }
 
@@ -591,6 +601,7 @@ h1.instruction-titel {
   font-size: 1.2rem;
   font-weight: 600;
   color: #ffffff;
+  -webkit-transition: all ease-out 0.1s;
   transition: all ease-out 0.1s;
 }
 
@@ -721,6 +732,7 @@ h1.instruction-titel {
   width: 75px;
   position: relative;
   cursor: pointer;
+  -webkit-transition: all ease-out 0.1s;
   transition: all ease-out 0.1s;
 }
 
@@ -799,6 +811,7 @@ h1.instruction-titel {
   font-size: 1.25rem;
   color: #89909d;
   margin: 0px 10px 0 10px;
+  -webkit-transition: all ease-out 0.1s;
   transition: all ease-out 0.1s;
 }
 
@@ -1106,8 +1119,6 @@ input {
   box-sizing: border-box;
   cursor: pointer;
 }
-
-
 .top_bar_menu .top_container .menu_options ul li.active {
   background: #14223b;
   border: 2px solid #14223b;
@@ -1157,7 +1168,9 @@ input {
 }
 .container_full .inputform-container .inputform-col.right .step-container-right .demo-container iframe {
   transition-property: width;
+  -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
 }
 .container_full .inputform-container .inputform-col.right .step-container-right .demo-container.demo-container-mobile iframe {

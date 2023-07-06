@@ -27,6 +27,7 @@ if (demoId) {
   const xhr = new XMLHttpRequest();
   const url = `fetch_data.php?id=${demoId}`;
   xhr.open('GET', url, true);
+  document.querySelector('.loading-screen p').style.display = 'block';
   xhr.onload = function () {
     if (xhr.status === 200) {
       const data = xhr.responseText;
