@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     let demoFrame = document.getElementById("demoFrame");
-    let url_string = "https://skelter.cfdemo4.nl/demo/?demo=true";
+    let url_string = "https://demogenerator.companyfuel.nl/demo/?demo=true";
 
     const demoContainer = document.querySelector(".demo-container");
     const mobileActive = document.querySelector(".mobile_active");
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const urlParameters = `demo=true&bedrijfsnaam=${bedrijfsnaam}&primaryColor=${primaryColor}&secondaryColor=${secondaryColor}&bedrijfsnaam=${bedrijfsnaam}&logoUrl=${logo}&info%40companyfuel.nl=${email}&branche=${branche}&style=${stijl}`;
 
 
-            demoFrame.src = "https://skelter.cfdemo4.nl/demo/?" + urlParameters;
+            demoFrame.src = "https://demogenerator.companyfuel.nl/" + branche + "/?" + urlParameters;
 
             const xhr = new XMLHttpRequest();
             xhr.open('POST', '../../save.php');

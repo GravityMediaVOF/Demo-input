@@ -51,16 +51,22 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
         <img class="logo" src="./src/img/cf-logo-dark.svg" alt="">
       </a>
       <div class="menu_options">
-        <select class="style_switch" name="" style="display: none;">
-          <option value="style1">Stijl 1</option>
-          <option value="style2">Stijl 2</option>
-          <option value="style3">Stijl 3</option>
-        </select>
+        <div class="style_switch_outer">
+          <span class="label">Stijl</span>
+          <input type="radio" class="style_switch" name="style_switch" id="style1" value="style1">
+          <label class="style_label" for="style1" data-tooltip="Fris: minimalistisch en gestroomlijnd" data-flow="bottom"><img src="/src/img/style1-home.webp" width="50px" height="50px" alt="Stijl 1"></label>
+
+          <input type="radio" class="style_switch" name="style_switch" id="style2" value="style2">
+          <label class="style_label" for="style2" data-tooltip="Innovatief: vernieuwend & vooruitstrevend" data-flow="bottom"><img src="/src/img/style2-home.webp" width="50px" height="50px" alt="Stijl 2"></label>
+
+          <input type="radio" class="style_switch" name="style_switch" id="style3" value="style3">
+          <label class="style_label" for="style3" data-tooltip="Statig: simpel & strak" data-flow="bottom"><img src="/src/img/style3-home.webp" width="50px" height="50px" alt="Stijl 3"></label>
+        </div>
         <ul>
           <li class="desktop_active active"><i class="icon">web_asset</i></li>
           <li class="mobile_active"><i class="icon">phone_iphone</i></li>
         </ul>
-        <a class="button orange" href="https://www.companyfuel.nl/professionele-website/#features">Bekijk de opties</a>
+        <a class="button orange" href="https://www.companyfuel.nl/professionele-website/#features" target="_blank">Bekijk de opties</a>
       </div>
     </div>
 
@@ -261,53 +267,134 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
           <div class="step step1" data-step="1">
             <div class="vinkopties-container exclusive single-check">
-
-              <div class="vinkopties-optie active" data-name="advies_consultancy">
+              <div class="vinkopties-optie active" data-name="zakelijke_dienstverlening">
                 <div class="vinkopties-vink vinkopties-vink-radio"></div>
                 <div class="vinkopties-text">
-                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Advies en consultancy</h4>
+                  <h4 class="vinkopties-subtitel">Zakelijke dienstverlening</h4>
+                  <p class="vinkopties-p">Experts die zakelijke groei en succes stimuleren</p>
                 </div>
               </div>
-
-              <div class="vinkopties-optie" data-name="financiele_dienstverlening">
+              <div class="vinkopties-optie" data-name="administratieve_dienstverlening">
                 <div class="vinkopties-vink vinkopties-vink-radio"></div>
                 <div class="vinkopties-text">
-                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Financiële dienstverlening</h4>
+                  <h4 class="vinkopties-subtitel">Administratieve dienstverlening</h4>
+                  <p class="vinkopties-p">Advies en ondersteuning bij administratieve zaken</p>
                 </div>
               </div>
-
               <div class="vinkopties-optie" data-name="juridische_dienstverlening">
                 <div class="vinkopties-vink vinkopties-vink-radio"></div>
                 <div class="vinkopties-text">
-                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Juridische dienstverlening</h4>
+                  <h4 class="vinkopties-subtitel">Juridische dienstverlening</h4>
+                  <p class="vinkopties-p">Juridische expertise die u kunt vertrouwen</p>
                 </div>
               </div>
-
-              <div class="vinkopties-optie" data-name="it_dienstverlening">
+              <div class="vinkopties-optie" data-name="marketing_en_communicatie_advies">
                 <div class="vinkopties-vink vinkopties-vink-radio"></div>
                 <div class="vinkopties-text">
-                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">IT-dienstverlening</h4>
+                  <h4 class="vinkopties-subtitel">Marketing & communicatie</h4>
+                  <p class="vinkopties-p">Oplossingen bij merkstrategie en marketing</p>
                 </div>
               </div>
-
-              <div class="vinkopties-optie" data-name="marketing_communicatie">
+              <div class="vinkopties-optie" data-name="creatieve_beroepen">
                 <div class="vinkopties-vink vinkopties-vink-radio"></div>
                 <div class="vinkopties-text">
-                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Marketing en communicatie</h4>
+                  <h4 class="vinkopties-subtitel">Creatieve beroepen</h4>
+                  <p class="vinkopties-p">Innovatie en inspiratie bij creatieve projecten</p>
                 </div>
               </div>
-
+              <div class="vinkopties-optie" data-name="software_en_ontwikkeling">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel">Software & ontwikkeling</h4>
+                  <p class="vinkopties-p">Maatwerk oplossingen voor digitale ontwikkeling</p>
+                </div>
+              </div>
+              <div class="vinkopties-optie" data-name="gezondheid_en_verzorging">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel">Gezondheid & verzorging</h4>
+                  <p class="vinkopties-p">Zorg en ondersteuning voor welzijn</p>
+                </div>
+              </div>
+              <div class="vinkopties-optie" data-name="bouw_en_klusbedrijven">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel">Bouw- & klusbedrijven</h4>
+                  <p class="vinkopties-p">Vakkundigheid en kwaliteit in bouwprojecten</p>
+                </div>
+              </div>
+              <div class="vinkopties-optie" data-name="handel_en_ecommerce">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel">Handel & e-commerce</h4>
+                  <p class="vinkopties-p">Ondernemingen in handel en e-commerce</p>
+                </div>
+              </div>
+              <div class="vinkopties-optie" data-name="evenementen">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel">Evenementen</h4>
+                  <p class="vinkopties-p">Organisatie en ondersteuning bij evenementen</p>
+                </div>
+              </div>
+              <div class="vinkopties-optie" data-name="sport_en_recreatie">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel">Sport en recreatie</h4>
+                  <p class="vinkopties-p">Diensten in sport en recreatie activiteiten</p>
+                </div>
+              </div>
+              <div class="vinkopties-optie" data-name="vastgoed_en_woning">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel">Vastgoed & woning</h4>
+                  <p class="vinkopties-p">Oplossingen voor vastgoed en woningbehoeften</p>
+                </div>
+              </div>
+              <div class="vinkopties-optie" data-name="onderwijs_en_ontwikkeling">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel">Onderwijs & ontwikkeling</h4>
+                  <p class="vinkopties-p">Inspireer leren en groei met onderwijs en ontwikkeling</p>
+                </div>
+              </div>
+              <div class="vinkopties-optie" data-name="reizen">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel">Reizen</h4>
+                  <p class="vinkopties-p">Bied reiservaringen die de wereld helpen ontdekken</p>
+                </div>
+              </div>
+              <div class="vinkopties-optie" data-name="horeca">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel">Horeca</h4>
+                  <p class="vinkopties-p">Bied een gastvrije en culinaire ervaring in de horeca</p>
+                </div>
+              </div>
               <div class="vinkopties-optie" data-name="human_resources">
                 <div class="vinkopties-vink vinkopties-vink-radio"></div>
                 <div class="vinkopties-text">
-                  <h4 class="vinkopties-subtitel vinkopties-subtitel-no-space">Human resources (HR)</h4>
+                  <h4 class="vinkopties-subtitel">Human Resources</h4>
+                  <p class="vinkopties-p">Strategisch beheer van talent en organisatie</p>
                 </div>
               </div>
-
+              <div class="vinkopties-optie" data-name="vervoer_en_opslag">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel">Vervoer en opslag</h4>
+                  <p class="vinkopties-p">Efficiënte transport- en opslagoplossingen</p>
+                </div>
+              </div>
+              <div class="vinkopties-optie" data-name="non_profit">
+                <div class="vinkopties-vink vinkopties-vink-radio"></div>
+                <div class="vinkopties-text">
+                  <h4 class="vinkopties-subtitel">Non-profit</h4>
+                  <p class="vinkopties-p">Samen bouwen aan een betere wereld</p>
+                </div>
+              </div>
             </div>
           </div>
-
-
 
 
 
@@ -329,8 +416,8 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
               <div class="vinkopties-optie" data-name="style2">
                 <div class="vinkopties-vink"></div>
                 <div class="vinkopties-text">
-                  <h4 class="vinkopties-subtitel">Statig</h4>
-                  <p class="vinkopties-p">Simpel & strak, schreeuwerige uitstraling.</p>
+                  <h4 class="vinkopties-subtitel">Innovatief</h4>
+                  <p class="vinkopties-p">Vernieuwend & vooruitstrevend, moderne uitstraling.</p>
                 </div>
                 <div class="vinkopties-img">
                   <img src="./src/img/style2-home.webp" alt="">
@@ -341,8 +428,8 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
               <div class="vinkopties-optie" data-name="style3">
                 <div class="vinkopties-vink"></div>
                 <div class="vinkopties-text">
-                  <h4 class="vinkopties-subtitel">Innovatief</h4>
-                  <p class="vinkopties-p">Vernieuwend & vooruitstrevend, moderne uitstraling.</p>
+                  <h4 class="vinkopties-subtitel">Statig</h4>
+                  <p class="vinkopties-p">Simpel & strak, schreeuwerige uitstraling.</p>
                 </div>
                 <div class="vinkopties-img">
                   <img src="./src/img/style3-home.webp" alt="">

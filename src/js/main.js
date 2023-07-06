@@ -30,13 +30,43 @@ if (demoId) {
   xhr.onload = function () {
     if (xhr.status === 200) {
       const data = xhr.responseText;
+      console.log(data);
+      var branche = data.split("branche=")[1];
+      branche = branche.split("&")[0];
+      //console.log(branche);
       const time = Date.now();
       //console.log(time);
       const frameParams = data;
-      document.querySelector('#demoFrame').src = "https://skelter.cfdemo4.nl/demo/?" + data;
+      document.querySelector('#demoFrame').src = "https://demogenerator.companyfuel.nl/" + branche + "/?" + data;
       document.querySelector('#demoFrame').name = Math.floor(Date.now() / 1000);
       document.querySelector('#demoFrame').src = document.querySelector('#demoFrame').src + "&time=" + time;
       document.querySelector('#demoFrame').contentWindow.location.href = document.querySelector('#demoFrame').src;
+
+
+      const styleSwitchInputs = document.querySelectorAll('.style_switch');
+      const demoFrame = document.querySelector('#demoFrame');
+
+      // Preselect the radio input based on the 'style' parameter value
+      const url = demoFrame.src;
+      const initialStyleValue = (new URL(url).searchParams.get('style') || 'style1');
+      const selectedInput = [...styleSwitchInputs].find(input => input.value === initialStyleValue);
+      selectedInput?.setAttribute('checked', 'checked');
+
+      styleSwitchInputs.forEach(input => {
+        input.addEventListener('change', function() {
+          let iframeUrl = new URL(demoFrame.src);
+          console.log(iframeUrl);
+          const selectedStyle = this.value;
+
+          iframeUrl.searchParams.set('style', selectedStyle);
+
+          console.log(selectedStyle);
+          demoFrame.src = iframeUrl.href;
+          demoFrame.contentWindow.location.href = demoFrame.src;
+        });
+      });
+
+
     } else {
       console.error('Error fetching data from database');
     }
@@ -45,22 +75,6 @@ if (demoId) {
 
   current_step = 7;
 }
-
-style_switch.addEventListener('change', function() {
-  iframe_url = document.querySelector('#demoFrame').src;
-  if (iframe_url.includes("style1")) {
-    iframe_url = iframe_url.replace('style1', this.value);
-  }
-  if (iframe_url.includes("style2")) {
-    iframe_url = iframe_url.replace('style2', this.value);
-  }
-  if (iframe_url.includes("style3")) {
-    iframe_url = iframe_url.replace('style3', this.value);
-  }
-  console.log(this.value);
-  document.querySelector('#demoFrame').src = iframe_url;
-  document.querySelector('#demoFrame').contentWindow.location.href = document.querySelector('#demoFrame').src;
-});
 
 
 
@@ -847,7 +861,7 @@ function PostLogo() {
 
 
 document.body.onbeforeunload = function(){
-  if (current_step == 6 && email_clicked == false) {
+  if (current_step == 6 && email_clicked == false && urlParams.get('direct') != 'true') {
     PostCalendly();
   }
 };
