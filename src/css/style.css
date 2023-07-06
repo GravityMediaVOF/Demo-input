@@ -1100,7 +1100,7 @@ input {
   align-items: center;
   justify-content: flex-end;
   flex-grow: 1;
-  gap: 10px;
+  gap: 30px;
 }
 .top_bar_menu .top_container .menu_options ul {
   display: inline-flex;
@@ -1126,6 +1126,53 @@ input {
 }
 .top_bar_menu .top_container .menu_options ul li.active i {
   color: #ffffff;
+}
+.top_bar_menu .top_container .style_switch_outer {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+@media screen and (max-width: 768px) {
+  .top_bar_menu .top_container .style_switch_outer {
+    display: none;
+  }
+}
+.top_bar_menu .top_container .style_switch_outer .label {
+  font-family: "Poppins", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #a5a5a5;
+}
+@media screen and (max-width: 992px) {
+  .top_bar_menu .top_container .style_switch_outer .label {
+    display: none;
+  }
+}
+.top_bar_menu .top_container .style_switch_outer .style_switch {
+  display: none;
+}
+.top_bar_menu .top_container .style_switch_outer .style_label {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  background: #fff;
+  border: 2px solid #e4e3e3;
+  width: 52px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: #fff;
+  transition: background-color 0.2s ease-out, border-color 0.2s ease-out;
+}
+.top_bar_menu .top_container .style_switch_outer .style_switch:checked + label {
+  border-color: #0D2040;
+  background-color: #eaf0fb;
+}
+.top_bar_menu .top_container .style_switch_outer .style_label img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 
 .container_full .footer-container {
@@ -1184,4 +1231,120 @@ input {
 .container_full .inputform-container .inputform-col .inputform-inner-col {
   padding: 0;
   max-width: 100%;
+}
+
+[data-tooltip] {
+  position: relative;
+  cursor: pointer;
+  font-family: "Inter", "Arial", sans-serif;
+}
+
+[data-tooltip]:before,
+[data-tooltip]:after {
+  line-height: 1;
+  font-size: 0.75em;
+  pointer-events: none;
+  position: absolute;
+  box-sizing: border-box;
+  display: none;
+  opacity: 0;
+}
+
+[data-tooltip]:before {
+  content: "";
+  border: 5px solid transparent;
+  z-index: 100;
+}
+
+[data-tooltip]:after {
+  content: attr(data-tooltip);
+  text-align: center;
+  min-width: 3em;
+  max-width: 21em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 7px 8px;
+  border-radius: 3px;
+  background: #14223B;
+  color: #FFFFFF;
+  z-index: 99;
+}
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+  display: block;
+  opacity: 1;
+}
+
+[data-tooltip]:not([data-flow])::before,
+[data-tooltip][data-flow=top]::before {
+  bottom: 100%;
+  border-bottom-width: 0;
+  border-top-color: #14223B;
+}
+
+[data-tooltip]:not([data-flow])::after,
+[data-tooltip][data-flow=top]::after {
+  bottom: calc(100% + 5px);
+}
+
+[data-tooltip]:not([data-flow])::before, [tooltip]:not([data-flow])::after,
+[data-tooltip][data-flow=top]::before,
+[data-tooltip][data-flow=top]::after {
+  left: 50%;
+  -webkit-transform: translate(-50%, -4px);
+  transform: translate(-50%, -4px);
+}
+
+[data-tooltip][data-flow=bottom]::before {
+  top: 100%;
+  border-top-width: 0;
+  border-bottom-color: #14223B;
+}
+
+[data-tooltip][data-flow=bottom]::after {
+  top: calc(100% + 5px);
+}
+
+[data-tooltip][data-flow=bottom]::before, [data-tooltip][data-flow=bottom]::after {
+  left: 50%;
+  -webkit-transform: translate(-50%, 8px);
+  transform: translate(-50%, 8px);
+}
+
+[data-tooltip][data-flow=left]::before {
+  top: 50%;
+  border-right-width: 0;
+  border-left-color: #14223B;
+  left: calc(0em - 5px);
+  -webkit-transform: translate(-8px, -50%);
+  transform: translate(-8px, -50%);
+}
+
+[data-tooltip][data-flow=left]::after {
+  top: 50%;
+  right: calc(100% + 5px);
+  -webkit-transform: translate(-8px, -50%);
+  transform: translate(-8px, -50%);
+}
+
+[data-tooltip][data-flow=right]::before {
+  top: 50%;
+  border-left-width: 0;
+  border-right-color: #14223B;
+  right: calc(0em - 5px);
+  -webkit-transform: translate(8px, -50%);
+  transform: translate(8px, -50%);
+}
+
+[data-tooltip][data-flow=right]::after {
+  top: 50%;
+  left: calc(100% + 5px);
+  -webkit-transform: translate(8px, -50%);
+  transform: translate(8px, -50%);
+}
+
+[data-tooltip=""]::after, [data-tooltip=""]::before {
+  display: none !important;
 }
