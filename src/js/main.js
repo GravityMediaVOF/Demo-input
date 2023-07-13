@@ -23,7 +23,10 @@ if (stepParam) {
   current_step = 7;
 }
 
+
+let bottom_bar = document.querySelector('.top_bar_menu');
 if (demoId) {
+  bottom_bar.style.zIndex = 100;
   const xhr = new XMLHttpRequest();
   const url = `fetch_data.php?id=${demoId}`;
   xhr.open('GET', url, true);
@@ -959,7 +962,6 @@ function updateThumbnail(dropZoneElement, file) {
 
 
 //Show/hide bottom bar
-let bottom_bar = document.querySelector('.top_bar_menu');
 let bottom_bar_hide = document.querySelector('.hide-bar');
 let bottom_bar_hide_icon = document.querySelector('.hide-bar .icon')
 let is_visible = true;

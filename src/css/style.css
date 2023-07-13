@@ -1072,7 +1072,7 @@ input {
   position: fixed;
   bottom: 0;
   justify-content: center;
-  z-index: 1000;
+  z-index: -1;
   transition: transform 0.5s;
 }
 .top_bar_menu .hide-bar {

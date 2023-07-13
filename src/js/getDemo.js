@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    let bottom_bar = document.querySelector('.top_bar_menu');
 
     let demoFrame = document.getElementById("demoFrame");
     let url_string = "https://demogenerator.companyfuel.nl/demo/?demo=true";
@@ -120,6 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
             data.forEach(element => {
                 console.log(element);
             });
+            bottom_bar.style.zIndex = 100;
         });
     });
 
