@@ -958,6 +958,25 @@ function updateThumbnail(dropZoneElement, file) {
 }
 
 
+//Show/hide bottom bar
+let bottom_bar = document.querySelector('.top_bar_menu');
+let bottom_bar_hide = document.querySelector('.hide-bar');
+let bottom_bar_hide_icon = document.querySelector('.hide-bar .icon')
+let is_visible = true;
+
+bottom_bar_hide.addEventListener("click", function() { 
+  if (is_visible == true) {
+    bottom_bar.style.transform = "translateY(79px)"; 
+    bottom_bar_hide_icon.innerHTML = 'expand_less';
+    is_visible = false;
+  }
+  else {
+    bottom_bar.style.transform = "translateY(0px)"; 
+    bottom_bar_hide_icon.innerHTML = 'expand_more';
+    is_visible = true;
+  }
+  
+});
 
 
 

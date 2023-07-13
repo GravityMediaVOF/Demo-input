@@ -8,6 +8,29 @@
     bottom: 0;
     justify-content: center;
     z-index: 1000;
+    transition: transform 0.5s;
+
+    .hide-bar {
+        width: 4rem;
+        height: 2rem;
+        background-color: #fff;
+        border-radius: 2rem 2rem 0 0;
+        border-top: 1px solid #e4e3e3;
+        border-left: 1px solid #e4e3e3;
+        border-right: 1px solid #e4e3e3;
+        position: absolute;
+        top: calc(-2rem - 1px);
+        right: 6%;
+        cursor: pointer;
+        .icon {
+            color: $dark-blue;
+            position: absolute;
+            left: 50%;
+            top: 65%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+        }
+    }
 
 
 
@@ -204,7 +227,7 @@
                     height: 100%;
 
                     .demo-container {
-                        height: calc(100vh - 80px);
+                        height: 100vh;
                         display: flex;
                         justify-content: center;
                         background: $dark-blue;
