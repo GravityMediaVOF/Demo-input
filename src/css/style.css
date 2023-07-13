@@ -326,7 +326,7 @@ body {
 
 .inputform-container {
   width: 100%;
-  height: calc(100% - 100px);
+  height: calc(100% - 80px);
   display: grid;
   grid-template-columns: 3fr 5fr;
 }
@@ -1065,18 +1065,22 @@ input {
 
 .top_bar_menu {
   background: white;
-  height: 99px;
+  height: 79px;
   width: 100%;
-  border-bottom: 1px solid #e4e3e3;
+  border-top: 1px solid #e4e3e3;
   display: inline-flex;
+  position: fixed;
+  bottom: 0;
   justify-content: center;
+  z-index: 1000;
 }
 .top_bar_menu .top_container {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
-  width: calc(100% - 100px);
+  height: 80px;
+  width: calc(100% - 80px);
+  max-width: 1200px;
 }
 @media screen and (max-width: 768px) {
   .top_bar_menu .top_container {
@@ -1095,10 +1099,39 @@ input {
     height: 18px;
   }
 }
+.top_bar_menu .top_container .bekijk_opties .icon {
+  margin-left: 8px;
+}
+.top_bar_menu .top_container .whatsapp_button {
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  overflow: auto;
+  flex-shrink: 0;
+  justify-content: center;
+  font-family: "Poppins", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #fff;
+  background: #2BCB63;
+  border-radius: 5px;
+  padding: 16px 22px;
+  transition: all ease-out 0.2s;
+  align-items: center;
+  position: relative;
+}
+.top_bar_menu .top_container .whatsapp_button .wa_icon {
+  margin-right: 10px;
+}
+.top_bar_menu .top_container .whatsapp_button:hover {
+  background: #24ad54;
+}
 .top_bar_menu .top_container .menu_options {
   display: none;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   flex-grow: 1;
   gap: 30px;
 }
@@ -1120,12 +1153,9 @@ input {
   cursor: pointer;
 }
 .top_bar_menu .top_container .menu_options ul li.active {
-  background: #14223b;
+  background: #E7EEFA;
   border: 2px solid #14223b;
   cursor: default;
-}
-.top_bar_menu .top_container .menu_options ul li.active i {
-  color: #ffffff;
 }
 .top_bar_menu .top_container .style_switch_outer {
   display: inline-flex;
@@ -1208,7 +1238,7 @@ input {
   height: 100%;
 }
 .container_full .inputform-container .inputform-col.right .step-container-right .demo-container {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
   background: #0D2040;

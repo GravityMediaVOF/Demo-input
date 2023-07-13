@@ -50,27 +50,49 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
   <div class="top_bar_menu">
     <div class="top_container">
-      <a href="https://www.companyfuel.nl/" target="_blank">
+      <?php
+      if (isset($_GET["admin"])) {
+        $admin = ($_GET['admin']);
+        if ($admin == 'true') {
+          ?>
+          <div class="style_switch_outer">
+            <span class="label">Stijl</span>
+            <input type="radio" class="style_switch" name="style_switch" id="style1" value="style1">
+            <label class="style_label" for="style1" data-tooltip="Fris: minimalistisch en gestroomlijnd" data-flow="top"><img src="/src/img/style1-home.webp" width="50px" height="50px" alt="Stijl 1"></label>
+
+            <input type="radio" class="style_switch" name="style_switch" id="style2" value="style2">
+            <label class="style_label" for="style2" data-tooltip="Innovatief: vernieuwend & vooruitstrevend" data-flow="top"><img src="/src/img/style2-home.webp" width="50px" height="50px" alt="Stijl 2"></label>
+
+            <input type="radio" class="style_switch" name="style_switch" id="style3" value="style3">
+            <label class="style_label" for="style3" data-tooltip="Statig: simpel & strak" data-flow="top"><img src="/src/img/style3-home.webp" width="50px" height="50px" alt="Stijl 3"></label>
+          </div>
+          <?php
+        }
+      }
+      else {
+        ?>
+          <a href="https://wa.me/31850603835" target="_blank">
+            <div class="whatsapp_button">
+            <img class="wa_icon" src="./src/icons/wa_icon.png" alt="">
+              WhatsApp ons
+            </div>
+          </a>
+        <?php
+      }
+        
+      ?>
+      <!-- <a href="https://www.companyfuel.nl/" target="_blank">
         <img class="logo" src="./src/img/cf-logo-dark.svg" alt="">
-      </a>
+      </a> -->
+      
       <div class="menu_options">
-        <div class="style_switch_outer">
-          <span class="label">Stijl</span>
-          <input type="radio" class="style_switch" name="style_switch" id="style1" value="style1">
-          <label class="style_label" for="style1" data-tooltip="Fris: minimalistisch en gestroomlijnd" data-flow="bottom"><img src="/src/img/style1-home.webp" width="50px" height="50px" alt="Stijl 1"></label>
-
-          <input type="radio" class="style_switch" name="style_switch" id="style2" value="style2">
-          <label class="style_label" for="style2" data-tooltip="Innovatief: vernieuwend & vooruitstrevend" data-flow="bottom"><img src="/src/img/style2-home.webp" width="50px" height="50px" alt="Stijl 2"></label>
-
-          <input type="radio" class="style_switch" name="style_switch" id="style3" value="style3">
-          <label class="style_label" for="style3" data-tooltip="Statig: simpel & strak" data-flow="bottom"><img src="/src/img/style3-home.webp" width="50px" height="50px" alt="Stijl 3"></label>
-        </div>
         <ul>
           <li class="desktop_active active"><i class="icon">web_asset</i></li>
           <li class="mobile_active"><i class="icon">phone_iphone</i></li>
         </ul>
-        <a class="button orange" href="https://www.companyfuel.nl/professionele-website/#features" target="_blank">Bekijk de opties</a>
+        
       </div>
+      <a class="button bekijk_opties" href="https://www.companyfuel.nl/professionele-website/#features" target="_blank">Bekijk de opties <i class="icon">arrow_forward</i></a>
     </div>
 
   </div>
