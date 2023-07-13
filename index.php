@@ -49,6 +49,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 <body>
 
   <div class="top_bar_menu">
+    <div class="hide-bar"><i class="icon">expand_more</i></div>
     <div class="top_container">
       <?php
       if (isset($_GET["admin"])) {
@@ -73,7 +74,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
         ?>
           <a href="https://wa.me/31850603835" target="_blank">
             <div class="whatsapp_button">
-            <img class="wa_icon" src="./src/icons/wa_icon.png" alt="">
+              <img class="wa_icon" src="./src/icons/wa_icon.png" alt="">
               WhatsApp ons
             </div>
           </a>
