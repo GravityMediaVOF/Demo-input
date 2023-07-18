@@ -981,6 +981,22 @@ bottom_bar_hide.addEventListener("click", function() {
 });
 
 
+//Opties bekijken overlay
+let opties_overlay = document.querySelector('.opties-overlay');
+let back_to_demo = document.querySelector('.opties-overlay .breadcrumb a');
+let bekijk_opties = document.querySelector('.button.bekijk_opties');
+
+back_to_demo.addEventListener("click", function() {
+  opties_overlay.style.display = 'none';
+})
+
+bekijk_opties.addEventListener("click", function() {
+  opties_overlay.style.display = 'flex';
+})
+
+
+
+
 
 // Loading screen
 window.addEventListener("load", (event) => {

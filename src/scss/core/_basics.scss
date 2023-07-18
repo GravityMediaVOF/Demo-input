@@ -1,3 +1,170 @@
+.opties-overlay {
+    min-height: 100vh;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+
+    .opties-overlay-container {
+        max-width: 1500px;
+        width: 1500px;
+        padding: 50px 40px;
+        padding-bottom: 120px;
+        display: flex;
+        flex-direction: column;
+
+        .opties-overlay-header {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            width: 100%;
+
+            a {
+                height: fit-content;
+
+                .logo {
+                    width: 160px;
+                }
+            }
+
+            .breadcrumb {
+                display: flex;
+                font-size: 14px;
+                font-family: "Inter","Arial",sans-serif;
+                color: #89909D;
+                align-items: center;
+
+                a {
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+
+                a:visited {
+                    color: #89909D;
+                }
+
+                .icon {
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    font-size: 14px;
+                }
+
+                span {
+                    font-weight: 500;
+                    color: #EF6C4E;
+                }
+            }
+        }
+
+        .opties-overlay-content {
+            padding-top: 120px;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+
+            h1 {
+                font-size: 45px;
+                font-family: "Poppins","Arial",sans-serif;
+                font-weight: 600;
+                line-height: initial;
+            }
+
+            .pakketten-grid {
+                margin-top: 60px;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 30px;
+
+                @media screen and (max-width: $lg) {
+                    grid-template-columns: 1fr;
+                }
+
+                .pakket-card {
+                    border-radius: 10px;
+                    border: 1px solid #e4e3e3;
+                    overflow: hidden;
+
+                    .card-content {
+                        padding: 50px 30px;
+                        h3 {
+                            font-size: 24px;
+                            font-family: "Poppins","Arial",sans-serif;
+                            font-weight: 600;
+                            margin-bottom: 20px;
+                            line-height: initial;
+                        }
+    
+                        p {
+                            margin-bottom: 10px;
+                        }
+    
+                        ul {
+                            margin-top: 50px;
+                            margin-bottom: 30px;
+    
+                            li {
+                                font-family: "Inter","Arial",sans-serif;
+                                margin-bottom: 15px;
+                                display: flex;
+                                align-items: center;
+                                gap: 10px;
+    
+                                .icon {
+                                    background-color: #65C87A;
+                                    border-radius: 500px;
+                                    color: white;
+                                    width: 24px;
+                                    height: 24px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                }
+                            }
+                        }
+    
+                        .button {
+                            margin-top: 50px;
+                        }
+                    }
+                }
+
+                .pakket-card.dark {
+                    background-color: $dark-blue;
+
+                    img {
+                        width: 100%;
+                        max-height: 200px;
+                        object-fit: cover;
+                        object-position: left -10px;
+                    }
+
+                    .card-content {
+                        h3 {
+                            color: white;
+                        }
+    
+                        p {
+                            color: white;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
 .top_bar_menu {
     background: white;
     height: 79px;

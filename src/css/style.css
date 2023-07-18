@@ -1063,6 +1063,143 @@ input {
   font-size: 1.125rem;
 }
 
+.opties-overlay {
+  min-height: 100vh;
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+}
+.opties-overlay .opties-overlay-container {
+  max-width: 1500px;
+  width: 1500px;
+  padding: 50px 40px;
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-header {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-header a {
+  height: fit-content;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-header a .logo {
+  width: 160px;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-header .breadcrumb {
+  display: flex;
+  font-size: 14px;
+  font-family: "Inter", "Arial", sans-serif;
+  color: #89909D;
+  align-items: center;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-header .breadcrumb a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-header .breadcrumb a:visited {
+  color: #89909D;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-header .breadcrumb .icon {
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 14px;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-header .breadcrumb span {
+  font-weight: 500;
+  color: #EF6C4E;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-content {
+  padding-top: 120px;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-content h1 {
+  font-size: 45px;
+  font-family: "Poppins", "Arial", sans-serif;
+  font-weight: 600;
+  line-height: initial;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-content .pakketten-grid {
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+@media screen and (max-width: 992px) {
+  .opties-overlay .opties-overlay-container .opties-overlay-content .pakketten-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.opties-overlay .opties-overlay-container .opties-overlay-content .pakketten-grid .pakket-card {
+  border-radius: 10px;
+  border: 1px solid #e4e3e3;
+  overflow: hidden;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-content .pakketten-grid .pakket-card .card-content {
+  padding: 50px 30px;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-content .pakketten-grid .pakket-card .card-content h3 {
+  font-size: 24px;
+  font-family: "Poppins", "Arial", sans-serif;
+  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: initial;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-content .pakketten-grid .pakket-card .card-content p {
+  margin-bottom: 10px;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-content .pakketten-grid .pakket-card .card-content ul {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-content .pakketten-grid .pakket-card .card-content ul li {
+  font-family: "Inter", "Arial", sans-serif;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-content .pakketten-grid .pakket-card .card-content ul li .icon {
+  background-color: #65C87A;
+  border-radius: 500px;
+  color: white;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-content .pakketten-grid .pakket-card .card-content .button {
+  margin-top: 50px;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-content .pakketten-grid .pakket-card.dark {
+  background-color: #0D2040;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-content .pakketten-grid .pakket-card.dark img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  object-position: left -10px;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-content .pakketten-grid .pakket-card.dark .card-content h3 {
+  color: white;
+}
+.opties-overlay .opties-overlay-container .opties-overlay-content .pakketten-grid .pakket-card.dark .card-content p {
+  color: white;
+}
+
 .top_bar_menu {
   background: white;
   height: 79px;

@@ -48,6 +48,65 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
 <body>
 
+  <div class="opties-overlay">
+    <div class="opties-overlay-container">
+      <div class="opties-overlay-header">
+        <a href="https://www.companyfuel.nl/" target="_blank">
+          <img class="logo" src="./src/img/cf-logo-dark.svg" alt="">
+        </a>
+        <div class="breadcrumb"><a>Website demo</a><i class="icon">chevron_right</i><span>Opties vergelijken</span></div>
+      </div>
+      <div class="opties-overlay-content">
+        <h1>Waar start jij?</h1>
+        <div class="pakketten-grid">
+          <div class="pakket-card">
+            <div class="card-content">
+              <h3>Website pakketten</h3>
+              <p>Laat een professionele website bouwen door onze experts.</p>
+
+              <ul>
+                <li><i class="icon">done</i> Ontzorgd door experts</li>
+                <li><i class="icon">done</i> Sneller meer resultaat</li>
+                <li><i class="icon">done</i> Op maat voor jouw doelen</li>
+                <li><i class="icon">done</i> Focus op je expertise</li>
+              </ul>
+
+              <a href="https://www.companyfuel.nl/professionele-website/"><div class="button">Bekijk pakketten</div></a>
+            </div>
+          </div>
+
+          <div class="pakket-card">
+            <div class="card-content">
+              <h3>Website abonnement</h3>
+              <p>Zelf aan de slag met onze flexibele website software.</p>
+
+              <ul>
+                <li><i class="icon">done</i> Basis voor online groei</li>
+                <li><i class="icon">done</i> Gebruiksvriendelijk</li>
+                <li><i class="icon">done</i> Bewezen templates</li>
+                <li><i class="icon">done</i> Houd zelf controle</li>
+              </ul>
+
+              <a href="https://www.companyfuel.nl/website-abonnement/"><div class="button">Bekijk abbonement</div></a>
+            </div>
+          </div>
+
+          <div class="pakket-card dark">
+            <img src="./src/img/michel.png" alt="">
+            <div class="card-content">
+              <h3>Spreek een expert</h3>
+              <p>Twijfel je welke pakket het best bij je past of wil je een expert spreken.</p>
+
+
+              <a href="https://calendly.com/michelwinkels/belafspraak"><div class="button orange">Adviesgesprek</div></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="top_bar_menu">
     <div class="hide-bar"><i class="icon">expand_more</i></div>
     <div class="top_container">
@@ -93,7 +152,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
         </ul>
         
       </div>
-      <a class="button bekijk_opties" href="https://www.companyfuel.nl/professionele-website/#features" target="_blank">Bekijk de opties <i class="icon">arrow_forward</i></a>
+      <a class="button bekijk_opties">Bekijk de opties <i class="icon">arrow_forward</i></a>
     </div>
 
   </div>
