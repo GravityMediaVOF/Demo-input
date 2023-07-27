@@ -33,12 +33,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            let branche = document.querySelector('.step1 .vinkopties-container .vinkopties-optie.active').dataset.name;
+            let branche;
+            let beroep;
+            if (document.querySelector('.step1 .vinkopties-container .vinkopties-optie.beroep.active')) {
+                branche = document.querySelector('.step1 .vinkopties-container .vinkopties-optie.beroep.active').dataset.branche;
+                beroep = document.querySelector('.step1 .vinkopties-container .vinkopties-optie.beroep.active').dataset.name;
+            }
+            else {
+                branche = document.querySelector('.step1 .vinkopties-container .vinkopties-optie.active').dataset.name;
+                beroep = false;
+            }
+
+
             let stijl = document.querySelector('.step2 .vinkopties-container .vinkopties-optie.active').dataset.name;
             kleuren = document.querySelector('.step3 .vinkopties-container .vinkopties-optie.active').dataset.name;
 
             let logo = document.querySelector('.step4 .vinkopties-container .vinkopties-optie.active').dataset.name;
-            (logo == "later") ? logo = "https://www.gmskeleton.nl/wp-content/uploads/2019/12/placeholder.com-logo1.png" : logo = image_url;
+            (logo == "later") ? logo = "https://demogenerator.companyfuel.nl/wp-content/uploads/placeholder-logo.png" : logo = image_url;
             console.log(image_url);
 
             let voornaam = document.querySelector('.step5 .gegevens-input .voornaam').value;
@@ -73,8 +84,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     break;
             }
 
-            const urlParameters = `demo=true&bedrijfsnaam=${bedrijfsnaam}&primaryColor=${primaryColor}&secondaryColor=${secondaryColor}&bedrijfsnaam=${bedrijfsnaam}&logoUrl=${logo}&info%40companyfuel.nl=${email}&branche=${branche}&style=${stijl}`;
-
+            let urlParameters;
+            if (!beroep == false) {
+                urlParameters = `demo=true&bedrijfsnaam=${bedrijfsnaam}&heroBg=https://images.unsplash.com/photo-1508873699372-7aeab60b44ab&primaryColor=${primaryColor}&secondaryColor=${secondaryColor}&bedrijfsnaam=${bedrijfsnaam}&logoUrl=${logo}&info%40companyfuel.nl=${email}&branche=${branche}&beroep=${beroep}&style=${stijl}`;
+            }
+            else {
+                urlParameters = `demo=true&bedrijfsnaam=${bedrijfsnaam}&heroBg=https://images.unsplash.com/photo-1508873699372-7aeab60b44ab&primaryColor=${primaryColor}&secondaryColor=${secondaryColor}&bedrijfsnaam=${bedrijfsnaam}&logoUrl=${logo}&info%40companyfuel.nl=${email}&branche=${branche}&style=${stijl}`;
+            }
 
             demoFrame.src = "https://demogenerator.companyfuel.nl/" + branche + "/?" + urlParameters;
 

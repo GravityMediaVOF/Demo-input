@@ -63,6 +63,74 @@ body {
   overflow-x: hidden;
 }
 
+.button.disabled {
+  background-color: #89909d;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.button.disabled:hover {
+  background-color: #89909d;
+  cursor: not-allowed;
+}
+
+.search-container {
+  margin-bottom: 60px;
+}
+.search-container .search-beroepen-input {
+  border-radius: 5px;
+  border: 2px solid #e4e3e3;
+  background-color: #fff;
+  font-size: 20px;
+  padding: 15px;
+  width: -webkit-fill-available;
+  display: flex;
+}
+.search-container .search-beroepen-input:focus-visible {
+  outline: none;
+  border: 2px solid #14223b;
+}
+.search-container .search-beroepen-icon {
+  position: absolute;
+  color: #89909d;
+  right: 0;
+  padding: 17px;
+}
+.search-container .search-beroepen-underp {
+  color: #89909d;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+.search-container .search-beroepen-titel {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+.search-container .search-beroepen-not-found {
+  display: none;
+  gap: 5px;
+  flex-direction: column;
+  margin-top: 40px;
+  align-items: center;
+}
+.search-container .search-beroepen-not-found h4 {
+  font-size: 1.125rem;
+}
+
+.seperator {
+  width: 100%;
+  height: 2px;
+  background-color: #e4e3e3;
+  margin-bottom: 60px;
+}
+
+.branches-titel {
+  font-size: 1.3rem;
+}
+
+.vinkopties-container.beroepen {
+  margin-bottom: 30px;
+}
+
 .top_bar_menu .top_container .menu_options .style_switch {
   height: 52px;
   border: 2px solid #e4e3e3;
@@ -425,9 +493,51 @@ h1.instruction-titel {
   margin-bottom: 30px;
 }
 
+.instruction-bullet-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.instruction-bullet-list .bullet-point {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.8em;
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #14223b;
+  margin-bottom: 15px;
+}
+
+.instruction-bullet-list .bullet {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background-color: #EAFAEF;
+  margin-right: 10px;
+  margin-top: 2px;
+  position: relative;
+}
+
+.instruction-bullet-list .bullet::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "\e876";
+  font-family: "Material Symbols Outlined";
+  font-size: 1.3rem;
+  color: #2ecc71;
+  font-weight: 600;
+  -webkit-transition: all ease-out 0.1s;
+  transition: all ease-out 0.1s;
+}
+
 .step-buttons-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .step-buttons-previous,
@@ -470,7 +580,7 @@ h1.instruction-titel {
 .step-buttons-begin {
   display: inline-flex;
   user-select: none;
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .step-buttons-error-message {
@@ -479,6 +589,29 @@ h1.instruction-titel {
   position: absolute;
   top: 30px;
   display: none;
+}
+
+.step-buttons-time {
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #89909d;
+  margin-top: 10px;
+  text-align: center;
+  flex-basis: 100%;
+}
+
+.step-buttons-button-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.demo-mail-container {
+  margin-top: 120px;
+}
+.demo-mail-container h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
 }
 
 .video-container {
@@ -1205,7 +1338,7 @@ input {
   height: 79px;
   width: 100%;
   border-top: 1px solid #e4e3e3;
-  display: inline-flex;
+  display: none;
   position: fixed;
   bottom: 0;
   justify-content: center;

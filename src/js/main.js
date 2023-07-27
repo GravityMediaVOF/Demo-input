@@ -130,6 +130,8 @@ function Step() {
     document.body.classList.add("container_full");
     document.querySelector(".step-buttons-container.bottom").style.display = "none";
     document.querySelector(".step-buttons-container.mobile").style.display = "none";
+    document.querySelector(".top_bar_menu").style.display = "inline-flex";
+    document.querySelector(".top_bar_menu").style.zIndex = 1;
   }
   else {
 
@@ -280,6 +282,7 @@ let vinkopties_exclusive_step_stijl = document.querySelectorAll('.step2 .vinkopt
 let vinkopties_exclusive_step3 = document.querySelectorAll('.step3 .vinkopties-container.exclusive .vinkopties-optie');
 let vinkopties_exclusive_step4 = document.querySelectorAll('.step4 .vinkopties-container.exclusive .vinkopties-optie');
 
+
 for (var i = 0; i < vinkopties.length; i++) {
   vinkopties[i].addEventListener("click", function () {
     this.classList.toggle('active');
@@ -291,6 +294,7 @@ for (var i = 0; i < vinkopties_exclusive_step2.length; i++) {
     for (var i = 0; i < vinkopties_exclusive_step2.length; i++) {
       vinkopties_exclusive_step2[i].classList.remove('active');
     }
+    document.querySelector(".desktop .step-buttons-next").classList.remove('disabled');
     this.classList.add('active');
   });
 }
@@ -336,6 +340,20 @@ let emaildemo_button = document.querySelector('.maildemo-button');
 let gegevens_inputs = document.querySelectorAll('.gegevens-input input');
 let hex_inputs = document.querySelectorAll('.colors-combination-custom-input .hexinput');
 
+
+
+
+if (current_step == 1) {
+  if (!document.querySelector('.step1 .vinkopties-container.exclusive .vinkopties-optie.active')) {
+    document.querySelector('.step-buttons-next.button').classList.add('disabled');
+  }
+  
+  document.querySelector('.step-buttons-error-message').style.display = "none";
+}
+
+
+
+
 previous_button.addEventListener("click", function () {
   // if (current_step == 3) {
   //   current_step = current_step - 2;
@@ -344,6 +362,7 @@ previous_button.addEventListener("click", function () {
   if (current_step > -1) {
     current_step = current_step - 1;
     document.querySelector('.step-buttons-error-message').style.display = "none";
+    document.querySelector('.step-buttons-next.button').classList.remove('disabled');
     Step();
   }
 });
@@ -354,10 +373,17 @@ next_button.addEventListener("click", function () {
     document.querySelector('.step-buttons-error-message').style.display = "block";
     ScrollToTopDesktop();
   }
-  // else if (current_step == 1) {
-  //   current_step = current_step + 2;
-  //   Step();
-  // }
+
+  else if (current_step == 0 && CheckChecked() == true) {
+    current_step = current_step + 1;
+    Step();
+    if (!document.querySelector('.step1 .vinkopties-container.exclusive .vinkopties-optie.active')) {
+      document.querySelector('.step-buttons-next.button').classList.add('disabled');
+    }
+    
+    document.querySelector('.step-buttons-error-message').style.display = "none";
+  }
+
   else if (current_step == 3 && document.querySelector('.vinkopties-container.colors .vinkopties-optie[data-name="custom"]').classList.contains('active')) {
     let input_error = false;
     for (var i = 0; i < hex_inputs.length; i++) {
@@ -446,6 +472,7 @@ previous_button_mobile.addEventListener("click", function () {
   if (current_step > -1) {
     current_step = current_step - 1;
     document.querySelector('.step-buttons-error-message').style.display = "none";
+    document.querySelector('.step-buttons-next.button').classList.remove('disabled');
     Step();
   }
 });
@@ -456,10 +483,17 @@ next_button_mobile.addEventListener("click", function () {
     document.querySelector('.step-buttons-error-message').style.display = "block";
     ScrollToTopDesktop();
   }
-  // else if (current_step == 1) {
-  //   current_step = current_step + 2;
-  //   Step();
-  // }
+  
+  else if (current_step == 0 && CheckChecked() == true) {
+    current_step = current_step + 1;
+    Step();
+    if (!document.querySelector('.step1 .vinkopties-container.exclusive .vinkopties-optie.active')) {
+      document.querySelector('.step-buttons-next.button').classList.add('disabled');
+    }
+    
+    document.querySelector('.step-buttons-error-message').style.display = "none";
+  }
+
   else if (current_step == 3 && document.querySelector('.vinkopties-container.colors .vinkopties-optie[data-name="custom"]').classList.contains('active')) {
     let input_error = false;
     for (var i = 0; i < hex_inputs.length; i++) {
@@ -593,12 +627,27 @@ function PostChoices(imageurl) {
   choices.push({ 'doel': step1 });
 
 
-  let step2 = document.querySelector('.step1 .vinkopties-container .vinkopties-optie.active').dataset.name;
+  let step2;
+  //let beroep;
+  if (document.querySelector('.step1 .vinkopties-container .vinkopties-optie.beroep.active')) {
+    // beroep = document.querySelector('.step1 .vinkopties-container .vinkopties-optie.beroep.active').dataset.name;
+    step2 = document.querySelector('.step1 .vinkopties-container .vinkopties-optie.beroep.active').dataset.branche + " (" + document.querySelector('.step1 .vinkopties-container .vinkopties-optie.beroep.active').dataset.name + ")";
+  }
+  else {
+    step2 = document.querySelector('.step1 .vinkopties-container .vinkopties-optie.active').dataset.name;
+    //beroep = false;
+  }
+  
+  // if (!beroep == false) {
+  //   choices.push({ 'beroep': beroep });
+  // }
+
   choices.push({ 'uitstraling': step2 });
 
 
   let step_stijl = document.querySelector('.step2 .vinkopties-container .vinkopties-optie.active').dataset.name;
   choices.push({ 'stijl': step_stijl });
+  
 
   let step3;
   if (document.querySelector('.step3 .vinkopties-container .vinkopties-optie.active').dataset.name == 'custom') {
@@ -648,12 +697,22 @@ function PostEmail() {
     }
   }
 
-  let branche = document.querySelector('.step1 .vinkopties-container .vinkopties-optie.active').dataset.name;
+  let branche;
+  let beroep;
+  if (document.querySelector('.step1 .vinkopties-container .vinkopties-optie.beroep.active')) {
+    branche = document.querySelector('.step1 .vinkopties-container .vinkopties-optie.beroep.active').dataset.branche;
+    beroep = document.querySelector('.step1 .vinkopties-container .vinkopties-optie.beroep.active').dataset.name;
+  }
+  else {
+    branche = document.querySelector('.step1 .vinkopties-container .vinkopties-optie.active').dataset.name;
+    beroep = false;
+  }
+
   let stijl = document.querySelector('.step2 .vinkopties-container .vinkopties-optie.active').dataset.name;
   kleuren = document.querySelector('.step3 .vinkopties-container .vinkopties-optie.active').dataset.name;
 
   let logo = document.querySelector('.step4 .vinkopties-container .vinkopties-optie.active').dataset.name;
-  (logo == "later") ? logo = "https://www.gmskeleton.nl/wp-content/uploads/2019/12/placeholder.com-logo1.png" : logo = image_url;
+  (logo == "later") ? logo = "https://demogenerator.companyfuel.nl/wp-content/uploads/placeholder-logo.png" : logo = image_url;
 
   let voornaam = document.querySelector('.step5 .gegevens-input .voornaam').value;
   let achternaam = document.querySelector('.step5 .gegevens-input .achternaam').value;
@@ -687,7 +746,13 @@ function PostEmail() {
       break;
   }
 
-  const urlParameters = `demo=true&bedrijfsnaam=${bedrijfsnaam}&heroBg=https://images.unsplash.com/photo-1508873699372-7aeab60b44ab&primaryColor=${primaryColor}&secondaryColor=${secondaryColor}&bedrijfsnaam=${bedrijfsnaam}&logoUrl=${logo}&info%40companyfuel.nl=${email}&branche=${branche}&style=${stijl}`;
+  let urlParameters;
+  if (!beroep == false) {
+    urlParameters = `demo=true&bedrijfsnaam=${bedrijfsnaam}&heroBg=https://images.unsplash.com/photo-1508873699372-7aeab60b44ab&primaryColor=${primaryColor}&secondaryColor=${secondaryColor}&bedrijfsnaam=${bedrijfsnaam}&logoUrl=${logo}&info%40companyfuel.nl=${email}&branche=${branche}&beroep=${beroep}&style=${stijl}`;
+  }
+  else {
+    urlParameters = `demo=true&bedrijfsnaam=${bedrijfsnaam}&heroBg=https://images.unsplash.com/photo-1508873699372-7aeab60b44ab&primaryColor=${primaryColor}&secondaryColor=${secondaryColor}&bedrijfsnaam=${bedrijfsnaam}&logoUrl=${logo}&info%40companyfuel.nl=${email}&branche=${branche}&style=${stijl}`;
+  }
 
   const xhr = new XMLHttpRequest();
   xhr.open('POST', '../../save.php');
@@ -712,6 +777,7 @@ function PostEmail() {
   data.append('url_parameters', urlParameters);
   data.append('doelen', doelen);
   data.append('branche', branche);
+  data.append('beroep', beroep);
   data.append('stijl', stijl);
   data.append('kleuren', kleuren);
   data.append('step3_custom_secondary', null);
@@ -748,12 +814,22 @@ function PostCalendly() {
     }
   }
 
-  let branche = document.querySelector('.step1 .vinkopties-container .vinkopties-optie.active').dataset.name;
+  let branche;
+  let beroep;
+  if (document.querySelector('.step1 .vinkopties-container .vinkopties-optie.beroep.active')) {
+    branche = document.querySelector('.step1 .vinkopties-container .vinkopties-optie.beroep.active').dataset.branche;
+    beroep = document.querySelector('.step1 .vinkopties-container .vinkopties-optie.beroep.active').dataset.name;
+  }
+  else {
+    branche = document.querySelector('.step1 .vinkopties-container .vinkopties-optie.active').dataset.name;
+    beroep = false;
+  }
+  
   let stijl = document.querySelector('.step2 .vinkopties-container .vinkopties-optie.active').dataset.name
   kleuren = document.querySelector('.step3 .vinkopties-container .vinkopties-optie.active').dataset.name;
 
   let logo = document.querySelector('.step4 .vinkopties-container .vinkopties-optie.active').dataset.name;
-  (logo == "later") ? logo = "https://www.gmskeleton.nl/wp-content/uploads/2019/12/placeholder.com-logo1.png" : logo = image_url;
+  (logo == "later") ? logo = "https://demogenerator.companyfuel.nl/wp-content/uploads/placeholder-logo.png" : logo = image_url;
 
   let voornaam = document.querySelector('.step5 .gegevens-input .voornaam').value;
   let achternaam = document.querySelector('.step5 .gegevens-input .achternaam').value;
@@ -787,8 +863,14 @@ function PostCalendly() {
       break;
   }
 
-  const urlParameters = `demo=true&bedrijfsnaam=${bedrijfsnaam}&heroBg=https://images.unsplash.com/photo-1508873699372-7aeab60b44ab&primaryColor=${primaryColor}&secondaryColor=${secondaryColor}&bedrijfsnaam=${bedrijfsnaam}&logoUrl=${logo}&info%40companyfuel.nl=${email}&branche=${branche}&style=${stijl}`;
-
+  let urlParameters;
+  if (!beroep == false) {
+    urlParameters = `demo=true&bedrijfsnaam=${bedrijfsnaam}&heroBg=https://images.unsplash.com/photo-1508873699372-7aeab60b44ab&primaryColor=${primaryColor}&secondaryColor=${secondaryColor}&bedrijfsnaam=${bedrijfsnaam}&logoUrl=${logo}&info%40companyfuel.nl=${email}&branche=${branche}&beroep=${beroep}&style=${stijl}`;
+  }
+  else {
+    urlParameters = `demo=true&bedrijfsnaam=${bedrijfsnaam}&heroBg=https://images.unsplash.com/photo-1508873699372-7aeab60b44ab&primaryColor=${primaryColor}&secondaryColor=${secondaryColor}&bedrijfsnaam=${bedrijfsnaam}&logoUrl=${logo}&info%40companyfuel.nl=${email}&branche=${branche}&style=${stijl}`;
+  }
+  
   const xhr = new XMLHttpRequest();
   xhr.open('POST', '../../save.php');
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -812,6 +894,7 @@ function PostCalendly() {
   data.append('url_parameters', urlParameters);
   data.append('doelen', doelen);
   data.append('branche', branche);
+  data.append('beroep', beroep);
   data.append('stijl', stijl);
   data.append('kleuren', kleuren);
   data.append('step3_custom_secondary', null);
@@ -993,6 +1076,114 @@ back_to_demo.addEventListener("click", function() {
 bekijk_opties.addEventListener("click", function() {
   opties_overlay.style.display = 'flex';
 })
+
+
+
+
+
+
+
+//Zoekfunctie beroepen
+const beroepen_search_input = document.querySelector('.search-beroepen-input');
+const beroepen_container = document.querySelector('.vinkopties-container.beroepen');
+
+function addBeroepOptie(beroep, branche, branche_slug, dataname) {
+  const vinkopties_optie = document.createElement("div");
+  vinkopties_optie.classList.add('vinkopties-optie');
+  vinkopties_optie.classList.add('beroep');
+  vinkopties_optie.dataset.name = dataname;
+  vinkopties_optie.dataset.branche = branche_slug;
+  vinkopties_optie.innerHTML = "<div class='vinkopties-vink vinkopties-vink-radio'></div><div class='vinkopties-text'><h4 class='vinkopties-subtitel'>" + beroep + "</h4><p class='vinkopties-p'>" + branche + "</p></div>";
+  beroepen_container.appendChild(vinkopties_optie);
+}
+
+function clearBeroepOpties() {
+  document.querySelectorAll(".vinkopties-optie.beroep:not(.active)").forEach(e => e.remove());
+}
+
+function hideBranches() {
+  document.querySelector('.vinkopties-container.branches').style.display = "none";
+}
+
+function showBranches() {
+  document.querySelector('.vinkopties-container.branches').style.display = "flex";
+}
+
+async function fetchBeroepenJSON() {
+  const response = await fetch("./src/json/beroepen.json");
+  const beroepen = await response.json();
+  return beroepen.beroepen;
+}
+
+
+fetchBeroepenJSON().then(beroepen => {
+  // console.log(beroepen);
+
+  beroepen_search_input.oninput = function() {
+    clearBeroepOpties();
+    if (beroepen_search_input.value.length > 2) {
+
+      let regex = new RegExp(beroepen_search_input.value, "i"); // regular expression
+      let results = Object.entries(beroepen).filter(beroep => regex.test(beroep));
+
+      if (results.length > 0) {
+        hideBranches();
+        document.querySelector('.search-beroepen-not-found').style.display = 'none';
+      }
+      else {
+        showBranches();
+        document.querySelector('.search-beroepen-not-found').style.display = 'flex';
+      }
+
+      for (let y = 0; y < results.length; y++) {
+        let matches = results[y][1].filter(value => regex.test(value));
+        // console.log(results[index][0]);
+        // console.log(matches);
+
+        for (let x = 0; x < matches.length; x++) {
+          let branchenaam = results[y][0].replaceAll("_", " ");
+          let beroep_slug = matches[x].toLowerCase().replaceAll(" ", "_");
+          branchenaam = branchenaam.charAt(0).toUpperCase() + branchenaam.slice(1);
+
+          if (document.querySelector('.vinkopties-optie.beroep.active') && document.querySelector('.vinkopties-optie.beroep.active .vinkopties-subtitel').innerHTML == matches[x]) {
+
+          }
+          else {
+            addBeroepOptie(matches[x], branchenaam, results[y][0], beroep_slug);
+          }
+          
+        }
+
+      }
+
+      let vinkopties_exclusive_beroepen_step2 = document.querySelectorAll('.step1 .vinkopties-container.exclusive .vinkopties-optie');
+      for (var i = 0; i < vinkopties_exclusive_beroepen_step2.length; i++) {
+        vinkopties_exclusive_beroepen_step2[i].addEventListener("click", function () {
+          for (var i = 0; i < vinkopties_exclusive_beroepen_step2.length; i++) {
+            vinkopties_exclusive_beroepen_step2[i].classList.remove('active');
+          }
+          if (!this.classList.contains('beroep')) {
+            clearBeroepOpties();
+          }
+          document.querySelector(".desktop .step-buttons-next").classList.remove('disabled');
+          this.classList.add('active');
+        });
+      }
+
+    }
+    else {
+      showBranches();
+      document.querySelector('.search-beroepen-not-found').style.display = 'none';
+    }
+  };
+});
+
+
+
+
+
+
+
 
 
 

@@ -87,7 +87,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
                 <li><i class="icon">done</i> Houd zelf controle</li>
               </ul>
 
-              <a href="https://www.companyfuel.nl/website-abonnement/"><div class="button">Bekijk abbonement</div></a>
+              <a href="https://www.companyfuel.nl/website-abonnement/"><div class="button">Bekijk abonnement</div></a>
             </div>
           </div>
 
@@ -173,12 +173,30 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
           <div class="step step-1" data-step="-1">
             <div class="instruction-container">
-              <h1 class="instruction-titel">Claim je demo</h1>
-              <p>Vraag een professionele website demo aan, en zie hoe jouw ideale website eruit ziet, en hoe deze je faciliteert in jouw doelstellingen.</p>
+              <h1 class="instruction-titel">Start je demo</h1>
+              <p>Vraag een professionele website demo aan, en zie hoe jouw ideale website eruit kan komen te zien, en hoe deze je faciliteert in jouw doelstellingen.</p>
+              <div class="instruction-bullet-list">
+              <div class="bullet-point">
+                <div class="bullet"></div>
+                <p>Claim in enkele minuten je demo</p>
+              </div>
+              <div class="bullet-point">
+                <div class="bullet"></div>
+                <p>Ontvang advies bij ieder onderdeel</p>
+              </div>
+              <div class="bullet-point">
+                <div class="bullet"></div>
+                <p>Bekijk je demo online of per e-mail</p>
+              </div>
+            </div>
             </div>
             <div class="step-buttons-container">
-              <div class="step-buttons-begin button">Starten met invullen</div>
+              <div class="step-buttons-button-container">
+                <div class="step-buttons-begin button">Starten met invullen</div>
+                <div class="step-buttons-time">Binnen 5 minuten je demo</div>
+              </div>
             </div>
+            
           </div>
 
           <div class="step step0" data-step="0">
@@ -233,11 +251,15 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
             <div class="instruction-container">
               <h4 class="instruction-subtitel">Advies</h4>
               <h2 class="instruction-titel">Demo afspraak</h2>
-              <p>Maak via het formulier een afspraak om je persoonlijke demo te bevestigen. Onze expert laat je dan in 20 minuten zien hoe de website jouw online groei faciliteert.</p>
+              <p>Maak via de kalender aan de rechterkant een afspraak om je persoonlijke demo te bevestigen. Onze expert laat je dan in 20 minuten zien hoe de website jouw online groei faciliteert.</p>
               <?php if (isset($_GET['direct'])) : ?>
                 <div class="step-buttons-begin button demo-direct">Direct genereren</div>
               <?php else : ?>
-                <div class="step-buttons-begin button maildemo-button">Stuur de demo per e-mail</div>
+                <div class="demo-mail-container">
+                  <h3>Of vraag je demo per mail aan</h3>
+                  <p>Ontvang en bekijk eerst zelf de demo. Daarna komen wij met een passend voorstel.</p>
+                  <div class="step-buttons-begin button maildemo-button">Stuur de demo per e-mail</div>
+                </div>
               <?php endif; ?>
             </div>
           </div>
@@ -351,8 +373,32 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 
 
           <div class="step step1" data-step="1">
-            <div class="vinkopties-container exclusive single-check">
-              <div class="vinkopties-optie active" data-name="zakelijke_dienstverlening">
+
+            <div class="search-container">
+              <h2 class="search-beroepen-titel">Zoek jouw beroep</h2>
+              <span class="material-symbols-outlined search-beroepen-icon">search</span>
+              <input class="search-beroepen-input" type="text" placeholder="bvb. Accountant">
+              <p class="search-beroepen-underp">Voer tenminste 3 karakters in</p>
+
+              <div class="search-beroepen-not-found">
+                <h4>Geen zoekresultaten gevonden.</h4>
+                <p>Probeer een andere zoekterm of kies hieronder een passende branche.</p>
+              </div>
+            </div>
+
+
+            <div class="vinkopties-container exclusive single-check beroepen">
+
+            </div>
+
+            
+
+            
+
+            <div class="vinkopties-container exclusive single-check branches">
+            <div class="seperator"></div>
+            <h2 class="branches-titel">Of kies een branche</h2>
+              <div class="vinkopties-optie" data-name="zakelijke_dienstverlening">
                 <div class="vinkopties-vink vinkopties-vink-radio"></div>
                 <div class="vinkopties-text">
                   <h4 class="vinkopties-subtitel">Zakelijke dienstverlening</h4>
@@ -718,24 +764,24 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
               <div class="duo-grid">
                 <div class="gegevens-input">
                   <p>Voornaam*</p>
-                  <input class="voornaam" type="text" name="" value="" required>
+                  <input class="voornaam" type="text" name="" value="<?php if (isset($_GET["voornaam"])): echo $_GET["voornaam"]; endif; ?>" required>
                 </div>
                 <div class="gegevens-input">
                   <p>Achternaam*</p>
-                  <input class="achternaam" type="text" name="" value="" required>
+                  <input class="achternaam" type="text" name="" value="<?php if (isset($_GET["achternaam"])): echo $_GET["achternaam"]; endif; ?>" required>
                 </div>
               </div>
               <div class="gegevens-input">
                 <p>Bedrijfsnaam*</p>
-                <input class="bedrijfsnaam" type="text" name="" value="" required>
+                <input class="bedrijfsnaam" type="text" name="" value="<?php if (isset($_GET["bedrijf"])): echo $_GET["bedrijf"]; endif; ?>" required>
               </div>
               <div class="gegevens-input">
                 <p>E-mail*</p>
-                <input class="email" type="text" name="" value="" required>
+                <input class="email" type="text" name="" value="<?php if (isset($_GET["email"])): echo $_GET["email"]; endif; ?>" required>
               </div>
               <div class="gegevens-input">
                 <p>Telefoon</p>
-                <input class="telefoon" type="text" name="" value="">
+                <input class="telefoon" type="text" name="" value="<?php if (isset($_GET["telefoon"])): echo $_GET["telefoon"]; endif; ?>">
               </div>
             </div>
           </div>
